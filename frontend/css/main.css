@@ -23,6 +23,20 @@ main {
   flex-grow: 1;
 }
 
+.separator {
+  width: 100%;
+  height: 0.2rem;
+  background: linear-gradient(90deg, white 0%, #0B0B0D 70%);
+}
+.separator--header {
+  position: fixed;
+  top: 80px;
+  left: 0;
+}
+.separator--reverse {
+  background: linear-gradient(270deg, white 0%, #0B0B0D 70%);
+}
+
 h1 {
   font-family: "Montez", cursive, arial;
   font-weight: normal;
@@ -260,13 +274,86 @@ header {
   transition: color 0.4s ease;
 }
 
-.separateur {
-  position: fixed;
-  top: 80px;
-  left: 0;
+footer {
   width: 100%;
-  height: 0.2rem;
-  background: linear-gradient(90deg, white 0%, #0B0B0D 70%);
+  background: #0B0B0D url("/frontend/src/oldcam_footer.jpg") no-repeat center right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0B0B0D;
+  color: white;
+}
+@media screen and (min-width: 420px) {
+  footer {
+    background: #0B0B0D url("/frontend/src/oldcam_footer.jpg") no-repeat center center;
+  }
+}
+
+.footerNav {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+@media screen and (min-width: 420px) {
+  .footerNav {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footerNav__part {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 420px) {
+  .footerNav__part {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footerNav__part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.footerNav__line {
+  text-align: left;
+  margin: 0.2rem 1rem;
+  white-space: nowrap;
+}
+.footerNav__line:hover {
+  color: #A68A7C;
+}
+@media screen and (min-width: 420px) {
+  .footerNav__line {
+    text-align: center;
+  }
+}
+
+.copyright {
+  width: 100%;
+  text-align: end;
+}
+.copyright__text {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin: 0.5rem 1rem 0.5rem 0;
 }
 
 html {
@@ -274,6 +361,6 @@ html {
 }
 
 body {
-  height: 200vh;
+  height: 100vh;
   background: black;
 }/*# sourceMappingURL=main.css.map */
