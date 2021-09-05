@@ -6,7 +6,76 @@ html{
 //*! A supprimer *//
 body{
     height: 100vh;
-    background: black;
+    background: $colorBg_default;
 }
 //*! A supprimer *//
 
+.startSection{
+    position: relative;
+    z-index:-1;
+    width: 100%;
+    height: 70vh;
+    min-height: 450px;
+    background: url("/frontend/src/oldcam_bg_mobile.jpg")no-repeat top center;
+    @include bg_textColor($colorBg_default);
+    margin-top: 80px;
+
+    @include mobile-limit{
+        height: 40vh;
+    }
+
+    @include tablet-limit{
+        width: 80%;
+        background: url("/frontend/src/oldcam_bg_tablet.jpg")no-repeat top right;
+    }
+
+    &__block{
+        position: absolute;
+        top:60%;
+        left:4%;
+        width: auto;
+        @include flexCol("cen","flexS");
+
+        @include mobile-limit{
+            left:10%;
+        }
+
+        @include tablet-limit{
+            left:20%;
+        }
+
+        @include desktop-limit{
+            left:30%;
+        }
+    }
+
+
+    &__title{
+        display: block;
+        position: relative;
+        width: auto;
+        font-size: 5rem;
+
+        &::after{
+            content: "";
+            position:absolute;
+            bottom: 10px;
+            left:40%;
+            width: 80%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: $textColor_light;
+        }
+    }
+
+    &__subTitle{
+        width: auto;
+        font-size: 1.5rem;
+        padding-left: 3rem;
+
+        @include mobile-limit{
+            padding-left: 7.5rem;
+        }
+    }
+
+}

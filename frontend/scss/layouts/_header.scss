@@ -189,7 +189,7 @@ header{
 }
 
 .menuList{
-    background: transparentize($colorBg_light, 0.3);
+    background: transparentize($colorBg_light, 0.1);
     border-radius: 50%;
     width: 300vw;
     height: 300vw;
@@ -211,8 +211,10 @@ header{
             padding: 1rem;
 
             &:hover{
-                color: $hoverColor;
-                transition: color 0.4s ease;
+                color: $selectedColor;
+                font-weight: bold;
+                transform: scale(1.4);
+                transition: all 0.4s ease;
             }
         }
     }

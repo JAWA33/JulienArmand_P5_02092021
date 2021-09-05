@@ -84,7 +84,7 @@ header {
   display: none;
   width: 65%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 850px) {
   .classicMenu {
     display: flex;
     flex-direction: row;
@@ -150,7 +150,7 @@ header {
   right: 75px;
   z-index: 1;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 850px) {
   .burgerMenu {
     display: none;
   }
@@ -245,7 +245,7 @@ header {
 }
 
 .menuList {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   width: 300vw;
   height: 300vw;
@@ -270,8 +270,10 @@ header {
   padding: 1rem;
 }
 .menuList__block__list--line:hover {
-  color: #A68A7C;
-  transition: color 0.4s ease;
+  color: #6262D9;
+  font-weight: bold;
+  transform: scale(1.4);
+  transition: all 0.4s ease;
 }
 
 footer {
@@ -323,7 +325,7 @@ footer {
     align-items: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 850px) {
   .footerNav__part {
     display: flex;
     flex-direction: row;
@@ -362,5 +364,79 @@ html {
 
 body {
   height: 100vh;
-  background: black;
+  background: #0B0B0D;
+}
+
+.startSection {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  background: url("/frontend/src/oldcam_bg_mobile.jpg") no-repeat top center;
+  background-color: #0B0B0D;
+  color: white;
+  margin-top: 80px;
+}
+@media screen and (min-width: 420px) {
+  .startSection {
+    height: 40vh;
+  }
+}
+@media screen and (min-width: 850px) {
+  .startSection {
+    width: 80%;
+    background: url("/frontend/src/oldcam_bg_tablet.jpg") no-repeat top right;
+  }
+}
+.startSection__block {
+  position: absolute;
+  top: 60%;
+  left: 4%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 420px) {
+  .startSection__block {
+    left: 10%;
+  }
+}
+@media screen and (min-width: 850px) {
+  .startSection__block {
+    left: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .startSection__block {
+    left: 30%;
+  }
+}
+.startSection__title {
+  display: block;
+  position: relative;
+  width: auto;
+  font-size: 5rem;
+}
+.startSection__title::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 40%;
+  width: 80%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: white;
+}
+.startSection__subTitle {
+  width: auto;
+  font-size: 1.5rem;
+  padding-left: 3rem;
+}
+@media screen and (min-width: 420px) {
+  .startSection__subTitle {
+    padding-left: 7.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
