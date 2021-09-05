@@ -1,0 +1,26 @@
+//* COLORS *//
+
+//* Graphical charter : Color
+
+$hoverColor:  #A68A7C;
+$selectedColor:  #6262D9;
+
+//Background colors
+$colorBg_default:#0B0B0D;
+$colorBg_light:white;
+
+//Textcolor
+$textColor_default:#101010;
+$textColor_light: white;
+
+//* Time variable *//
+
+$menuTime: 0.75s;
+
+//* Breakpoints maps
+$breakpoints:
+(
+    mobile: 420px,
+    tablet: 768px,
+    desktop: 1200px
+);
