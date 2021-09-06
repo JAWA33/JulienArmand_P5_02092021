@@ -4,20 +4,38 @@
 
 
 //* Font type *//
-h1{
+h1, h2, h3, .logoMenu, .cardProduct__price{
     font-family: 'Montez', cursive, arial;
     font-weight: normal;
+}
+
+h2{
     font-size: 3rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+.logoMenu{
+    font-size: 2.2rem;
+}
+
+.cardProduct__price{
+    font-size: 2rem;
 }
 
 p, li{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
 }
 
-.logoMenu{
-    font-family: 'Montez', cursive, arial;
-    font-weight: normal;
-    font-size: 2.2rem;
+li{
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+p{
+    font-weight: 400;
+    font-size: 1rem;
 }

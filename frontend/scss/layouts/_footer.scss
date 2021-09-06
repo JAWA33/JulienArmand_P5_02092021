@@ -42,7 +42,7 @@ footer{
         white-space: nowrap;
 
         &:hover{
-            color: $hoverColor;
+            color: $colorPrimary;
         }
 
         @include mobile-limit{

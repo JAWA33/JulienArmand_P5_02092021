@@ -117,3 +117,17 @@
       @content;
     }
   }
+
+  //SubLine for after
+
+  @mixin subLine ($width: 100%, $bottom: 0, $left: 0){
+    content: "";
+    position:absolute;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $textColor_light;
+
+    width: $width;
+    bottom: $bottom;
+    left: $left;
+  }

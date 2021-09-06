@@ -4,8 +4,9 @@
     background: linear-gradient(90deg,$colorBg_light 0%, $colorBg_default 70%); 
 
     &--header{
-        position:fixed;
-        top:80px;
+        position: fixed; //! Permet de passer sur la page
+        z-index: 99; //! permet de passer sur la page
+        top:84px;
         left: 0;  
     }
 

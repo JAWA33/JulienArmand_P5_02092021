@@ -5,6 +5,7 @@ header{
 
 .totalMenu{
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -39,11 +40,11 @@ header{
         padding: 1rem;
 
         &:hover{
-            color: $hoverColor;
+            color: $colorPrimary;
         }
 
         &--selected{
-            color:$selectedColor;
+            color:$colorSecondary;
             font-weight: 700;
         }
     }
@@ -70,7 +71,7 @@ header{
         margin-top: 0.6rem;
 
         &:hover{
-            color: $hoverColor;
+            color: $colorPrimary;
         }
 
         &--count{
@@ -100,7 +101,7 @@ header{
         opacity: 0;
 
         &:hover + .burgerMenu__icon{
-            background: $hoverColor;
+            background: $colorPrimary;
         }
 
         &:checked {
@@ -189,6 +190,8 @@ header{
 }
 
 .menuList{
+    position: relative; //! Permet de passer sur la page
+    z-index: 99; //! permet de passer sur la page
     background: transparentize($colorBg_light, 0.1);
     border-radius: 50%;
     width: 300vw;
@@ -211,7 +214,7 @@ header{
             padding: 1rem;
 
             &:hover{
-                color: $selectedColor;
+                color: $colorPrimary;
                 font-weight: bold;
                 transform: scale(1.4);
                 transition: all 0.4s ease;
