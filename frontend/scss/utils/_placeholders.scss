@@ -1,7 +1,9 @@
-%subLine{
-    content: "";
-    position:absolute;
-    height: 4px;
-    border-radius: 2px;
-    background-color: $textColor_light;
+%headerGap{
+    margin-top: $headerHeight;
+}
+
+%borderCard{
+    border-radius: 1.5rem;
+    border-top: 2px solid rgba(255,255,255,0.7);
+    border-left: 2px solid rgba(255,255,255,0.7);
 }

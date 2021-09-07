@@ -1,0 +1,26 @@
+.btn{
+    width: 100%;
+    max-width: 500px;
+    height: 3rem;
+    border-radius: 1.1rem;
+    border: none;
+    margin-bottom: 1.5rem;
+
+    &--callToAction{
+        @include bg_textColor($colorSecondary);
+
+        &:hover{
+            border:1px $colorBg_light solid;
+            background: $colorPrimary;
+            color: $textColor_light;
+        }
+    }
+
+    &--secondaryAction{
+        background: transparent;
+
+        &:hover{
+            border:1px $colorBg_light solid;
+        }
+    }
+}

@@ -1,14 +1,3 @@
-html {
-  scroll-behavior: smooth; //? Permet de scroll doucement dans le site ?//
-}
-
-//*! A supprimer *//
-body {
-  height: 100vh;
-  background: $colorBg_default;
-}
-//*! A supprimer *//
-
 
 .startSection {
   position:relative;
@@ -17,7 +6,7 @@ body {
   min-height: 450px;
   background: url("/frontend/src/oldcam_bg_mobile.jpg") no-repeat top center;
   @include bg_textColor($colorBg_default);
-  margin-top: 80px;
+  @extend %headerGap;
 
   @include mobile-limit {
     height: 40vh;

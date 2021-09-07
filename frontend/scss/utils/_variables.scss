@@ -10,7 +10,7 @@ $colorBg_default:#0B0B0D;
 $colorBg_light:white;
 
 //Textcolor
-$textColor_default:#101010;
+$textColor_default:#0B0B0D;
 $textColor_light: white;
 
 //* Time variable *//
@@ -24,3 +24,6 @@ $breakpoints:
     tablet: 850px,
     desktop: 1200px
 );
+
+//* headerHeight
+$headerHeight: 80px;

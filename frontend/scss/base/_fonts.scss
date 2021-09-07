@@ -4,7 +4,7 @@
 
 
 //* Font type *//
-h1, h2, h3, .logoMenu, .cardProduct__price{
+h1, h2, h3, .logoMenu, .cardProduct__price, .action__blockPrice__price{
     font-family: 'Montez', cursive, arial;
     font-weight: normal;
 }
@@ -13,7 +13,7 @@ h2{
     font-size: 3rem;
 }
 
-h3{
+h3,.cardProduct__price{
     font-size: 2rem;
 }
 
@@ -21,13 +21,12 @@ h3{
     font-size: 2.2rem;
 }
 
-.cardProduct__price{
-    font-size: 2rem;
+.action__blockPrice__price, .productOption__title, .productPage__product__name{
+    font-size: 2.5rem;
 }
 
-p, li{
+p, li, label, .btn{
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
 }
 
 li{
@@ -35,7 +34,21 @@ li{
     font-size: 1.1rem;
 }
 
-p{
-    font-weight: 400;
+p, label{
+    font-weight: 300;
     font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.btn{
+    &--callToAction{
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+    &--secondaryAction{
+        font-size: 1rem;
+        font-style: italic;
+        font-weight: 300;
+    }
+    
 }

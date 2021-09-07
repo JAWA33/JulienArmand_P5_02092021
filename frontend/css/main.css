@@ -23,6 +23,16 @@ main {
   flex-grow: 1;
 }
 
+.titlePage, .startSection {
+  margin-top: 80px;
+}
+
+.productPage__allContainers, .cardProduct {
+  border-radius: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.7);
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
+}
+
 .separator {
   width: 100%;
   height: 0.2rem;
@@ -31,14 +41,14 @@ main {
 .separator--header {
   position: fixed;
   z-index: 99;
-  top: 84px;
+  top: 80px;
   left: 0;
 }
 .separator--reverse {
   background: linear-gradient(270deg, white 0%, #0B0B0D 70%);
 }
 
-h1, h2, h3, .logoMenu, .cardProduct__price {
+h1, h2, h3, .logoMenu, .cardProduct__price, .action__blockPrice__price {
   font-family: "Montez", cursive, arial;
   font-weight: normal;
 }
@@ -47,7 +57,7 @@ h2 {
   font-size: 3rem;
 }
 
-h3 {
+h3, .cardProduct__price {
   font-size: 2rem;
 }
 
@@ -55,13 +65,12 @@ h3 {
   font-size: 2.2rem;
 }
 
-.cardProduct__price {
-  font-size: 2rem;
+.action__blockPrice__price, .productOption__title, .productPage__product__name {
+  font-size: 2.5rem;
 }
 
-p, li {
+p, li, label, .btn {
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
 }
 
 li {
@@ -69,9 +78,44 @@ li {
   font-size: 1.1rem;
 }
 
-p {
-  font-weight: 400;
+p, label {
+  font-weight: 300;
   font-size: 1rem;
+  line-height: 1.2rem;
+}
+
+.btn--callToAction {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+.btn--secondaryAction {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.btn {
+  width: 100%;
+  max-width: 500px;
+  height: 3rem;
+  border-radius: 1.1rem;
+  border: none;
+  margin-bottom: 1.5rem;
+}
+.btn--callToAction {
+  background-color: #A68A7C;
+  color: #0B0B0D;
+}
+.btn--callToAction:hover {
+  border: 1px white solid;
+  background: #6262D9;
+  color: white;
+}
+.btn--secondaryAction {
+  background: transparent;
+}
+.btn--secondaryAction:hover {
+  border: 1px white solid;
 }
 
 .cardProduct {
@@ -84,11 +128,8 @@ p {
   align-items: center;
   padding: 0.5rem;
   margin: 1rem;
-  border-radius: 1.5rem;
   background: linear-gradient(20deg, rgba(11, 11, 13, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
   box-shadow: 10px 15px 20px black;
-  border-top: 2px solid rgba(255, 255, 255, 0.7);
-  border-left: 2px solid rgba(255, 255, 255, 0.7);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
 }
@@ -108,6 +149,7 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem 1rem 0 0;
+  border: 1px solid white;
 }
 .cardProduct__info {
   margin-right: 0.5rem;
@@ -145,6 +187,7 @@ header {
 
 .totalMenu {
   position: fixed;
+  height: 80px;
   z-index: 99;
   top: 0;
   left: 0;
@@ -348,7 +391,7 @@ header {
   transition: opacity 0.4s ease;
 }
 .menuList__block__list--line {
-  color: #101010;
+  color: #0B0B0D;
   font-size: 1.5rem;
   padding: 1rem;
 }
@@ -446,7 +489,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: #0B0B0D;
 }
 
@@ -458,7 +501,6 @@ body {
   background: url("/frontend/src/oldcam_bg_mobile.jpg") no-repeat top center;
   background-color: #0B0B0D;
   color: white;
-  margin-top: 80px;
 }
 @media screen and (min-width: 420px) {
   .startSection {
@@ -505,8 +547,8 @@ body {
 .startSection__title::after {
   content: "";
   position: absolute;
-  height: 4px;
-  border-radius: 2px;
+  height: 3px;
+  border-radius: 1px;
   background-color: white;
   width: 80%;
   bottom: 10px;
@@ -542,8 +584,8 @@ body {
 .ourProducts__title::after {
   content: "";
   position: absolute;
-  height: 4px;
-  border-radius: 2px;
+  height: 3px;
+  border-radius: 1px;
   background-color: white;
   width: 50%;
   bottom: 3px;
@@ -563,4 +605,224 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   background-blend-mode: multiply;
+}
+
+.titlePage {
+  background-color: #0B0B0D;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.titlePage__title {
+  display: block;
+  position: relative;
+  width: auto;
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+.titlePage__title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 1px;
+  background-color: white;
+  width: 60%;
+  bottom: 5px;
+  left: 25%;
+}
+.titlePage__subTitle {
+  width: auto;
+  font-size: 1.5rem;
+  padding-left: 10rem;
+  margin-bottom: 2rem;
+}
+
+.productPage {
+  width: 100%;
+  max-width: 1500px;
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 420px) {
+  .productPage {
+    padding: 1rem 4rem;
+  }
+}
+.productPage__allContainers {
+  width: 100%;
+  background: linear-gradient(240deg, rgba(255, 255, 255, 0.7) 0%, #0B0B0D 76%);
+  padding: 1.5rem;
+  color: white;
+}
+.productPage__firstContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .productPage__firstContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+}
+.productPage__picture {
+  width: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid white;
+}
+@media screen and (min-width: 1200px) {
+  .productPage__picture {
+    width: 40%;
+    max-width: 400px;
+    margin-left: 3rem;
+  }
+}
+.productPage__product {
+  margin: 1rem 0;
+}
+.productPage__product__name {
+  display: block;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.productPage__product__name::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 1px;
+  background-color: white;
+  width: 65%;
+  bottom: -5px;
+  left: 0%;
+}
+.productPage__product__description {
+  text-indent: 5%;
+}
+.productPage__secondContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .productPage__secondContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+}
+
+.productOption {
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  .productOption {
+    width: 60%;
+  }
+}
+.productOption__title {
+  display: block;
+  position: relative;
+  margin-bottom: 2rem;
+}
+.productOption__title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 1px;
+  background-color: white;
+  width: 65%;
+  bottom: -5px;
+  left: 0%;
+}
+.productOption__form {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .productOption__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+.productOption__form__select {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: "stretch";
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1200px) {
+  .productOption__form__select {
+    width: 70%;
+  }
+}
+.productOption__form__select label {
+  margin-bottom: 1rem;
+}
+.productOption__form__select input {
+  height: 1.5rem;
+}
+.productOption__form__quantity {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 1200px) {
+  .productOption__form__quantity {
+    width: 20%;
+  }
+}
+.productOption__form__quantity label {
+  margin-bottom: 1rem;
+}
+.productOption__form__quantity input {
+  width: 120px;
+  height: 1.5rem;
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .action {
+    width: 35%;
+  }
+}
+.action__blockPrice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.action__blockPrice__title {
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=main.css.map */

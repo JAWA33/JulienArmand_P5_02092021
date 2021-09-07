@@ -6,7 +6,7 @@
     &--header{
         position: fixed; //! Permet de passer sur la page
         z-index: 99; //! permet de passer sur la page
-        top:84px;
+        top:$headerHeight;
         left: 0;  
     }
 
