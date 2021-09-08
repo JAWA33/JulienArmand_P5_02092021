@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Personal Css link-->
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- Connect to Fontawesome -->
+    <script src="https://kit.fontawesome.com/ed843d0fbb.js" crossorigin="anonymous"></script>
+
+    <title>OrinoCam - Panier</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="totalMenu">
+        <p class="logoMenu">OrinoCam</p>
+
+        <div class="classicMenu">
+          <div class="classicMenu__position">
+            <ul class="classicMenu__list">
+              <li class="classicMenu__line">
+                <a href="../index.html">Accueil</a>
+              </li>
+              <li class="classicMenu__line"><a href="#">Nos Produits</a></li>
+              <li class="classicMenu__line"><a href="#">Nos Conseils</a></li>
+              <li class="classicMenu__line"><a href="#">A Propos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="basketMenu">
+          <div class="basketMenu__iconBlock">
+            <a href="../html/panier.html" class="basketMenu__link">
+              <i class="basketMenu__iconBlock--icon fas fa-shopping-cart"></i>
+            </a>
+            <p class="basketMenu__iconBlock--count">0</p>
+          </div>
+        </div>
+
+        <div class="burgerMenu">
+          <input type="checkbox" class="burgerMenu__toggler" />
+          <div class="burgerMenu__icon">
+            <div class="burgerMenu__icon--lines"></div>
+          </div>
+          <div class="burgerMenu__nav">
+            <div class="menuList">
+              <nav class="menuList__block">
+                <ul class="menuList__block__list">
+                  <li class="menuList__block__list--line">
+                    <a href="../index.html">Accueil</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Produits</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Conseils</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">A Propos</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="separator separator--header"></div>
+    </header>
+
+<main>
+    <section class="titlePage">
+    <div class="titlePage__block">
+        <h1 class="titlePage__title">OrinoCam</h1>
+        <p class="titlePage__subTitle">Votre Panier</p>
+    </div>
+    </section>
+
+    <section class="blockInfo">
+        <div class="blockInfo__allContainers">
+            <div class="topContainer--basket">
+                <div class="topContainer__block">
+                    <h2 class="topContainer__block__name">Récapitulatif de votre panier</h2>
+                    <table class="basketTable">
+                        <thead class="basketTable__separator basketTable__separator--head">
+                            <tr class="basketTable__row basketTable__row--description">
+                                <th class="basketTable__col basketTable__col--first">Produit</th>
+                                <th class="basketTable__col basketTable__col--second">Nbre</th>
+                                <th class="basketTable__col basketTable__col--third">Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="basketTable__row">
+                                <td class="basketTable__col basketTable__col--first">Pentax 50XYZ</td>
+                                <td class="basketTable__col basketTable__col--second">1</td>
+                                <td class="basketTable__col basketTable__col--third">179,00€</td>
+                            </tr>
+                            <tr class="basketTable__row">
+                                <td class="basketTable__col basketTable__col--first">Minolta 1732</td>
+                                <td class="basketTable__col basketTable__col--second">2</td>
+                                <td class="basketTable__col basketTable__col--third">120,50€</td>
+                            </tr>
+                            
+                        </tbody>
+                        <tfoot class="basketTable__separator basketTable__separator--foot">
+                            <tr class="basketTable__row basketTable__row--description">
+                                <th class="basketTable__col basketTable__col--first">Total du panier</th>
+                                <th class="basketTable__col basketTable__col--second">3</th>
+                                <th class="basketTable__col basketTable__col--third">299,50€</th>
+                            </tr>
+                        </tfoot>
+                        
+                    </table>
+                </div>
+                <div class="topContainer__action">
+                    <button class="btn btn--emptyBasket">Vider mon panier</button>
+                </div>
+            </div>
+
+            <div class="bottomContainer">
+                <div class="bottomContainer__block">
+                    <h2 class="bottomContainer__block__name">Votre adresse de livraison</h2>
+                    <p class="bottomContainer__block__text">Merci de communiquer vos coordonnées pour que nous puissions vous envoyer votre commande dans les meilleurs délais :</p>
+                    <form action="post" class="information__form">
+                        <div class="information__form__select">
+                            <label for="lastName">Nom :</label>
+                            <input type="text" name="" id="lastName">
+                        </div>
+                        <div class="information__form__select">
+                            <label for="firstName">Prénom :</label>
+                            <input type="text" name="" id="firstName">
+                        </div>
+                        <div class="information__form__select">
+                            <label for="phoneNumber">Numéro de téléphone :</label>
+                            <input type="text" name="" id="phoneNumber">
+                        </div>
+                        <div class="information__form__select">
+                            <label for="email">Adresse mail valide :</label>
+                            <input type="text" name="" id="email">
+                        </div>
+                        <div class="information__form__select information__form__select--full">
+                            <label for="adress">Adresse postale :</label>
+                            <input type="text" name="" id="adress">
+                        </div>
+                        <div class="information__form__select">
+                            <label for="zipCode">Code postal :</label>
+                            <input type="text" name="" id="zipCode">
+                        </div>
+                        <div class="information__form__select">
+                            <label for="city">Ville :</label>
+                            <input type="text" name="" id="city">
+                        </div>
+                    </form>
+                </div>
+                <div class="action action--basket">
+                    <div class="action__required">Merci de remplir tous les champs avant de passer la commande</div>
+                    <div class="action__block">
+                        <p class="action__block__title">Montant total du panier:</p>
+                        <p class="action__block__price">299,50€</p>
+                    </div>
+                    <button class="btn btn--callToAction" onclick="window.location.href = '../html/commande.html';">Passer la commande</button>
+                    <button class="btn btn--secondaryAction" onclick="window.location.href = '../index.html';">Continuer mes achats</button>
+                </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="separator"></div>
+
+      <div class="footerNav">
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Conditions générales</a></li>
+          <li class="footerNav__line"><a href="#">Confidentialité</a></li>
+        </ul>
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Mentions légales</a></li>
+          <li class="footerNav__line"><a href="#">Nous contacter</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <p class="copyright__text">© Orinococo / OrniCam, 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>

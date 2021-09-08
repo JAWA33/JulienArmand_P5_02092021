@@ -1,0 +1,96 @@
+
+.startSection {
+  position:relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 450px;
+  background: url("/src/oldcam_bg_mobile.jpg") no-repeat top center;
+  @include bg_textColor($colorBg_default);
+  @extend %headerGap;
+
+  @include mobile-limit {
+    height: 40vh;
+  }
+
+  @include tablet-limit {
+    width: 80%;
+    background: url("/src/oldcam_bg_tablet.jpg") no-repeat top right;
+  }
+
+  &__block {
+    position: absolute;
+    top: 60%;
+    left: 4%;
+    width: auto;
+    @include flexCol("cen", "flexS");
+
+    @include mobile-limit {
+      left: 10%;
+    }
+
+    @include tablet-limit {
+      left: 20%;
+    }
+
+    @include desktop-limit {
+      left: 30%;
+    }
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    width: auto;
+    font-size: 5rem;
+
+    &::after {
+        @include subLine(80%,10px,40%);
+    }
+  }
+
+  &__subTitle {
+    width: auto;
+    font-size: 1.5rem;
+    padding-left: 3rem;
+
+    @include mobile-limit {
+      padding-left: 7.5rem;
+    }
+  }
+}
+
+.ourProducts {
+  @include bg_textColor($colorBg_default);
+  padding: 2rem 2rem;
+
+  @include tablet-limit{
+      padding: 2rem 4rem;
+  }
+
+  &__title {
+    width: 300px;
+    display: block;
+    position: relative;
+
+    margin-bottom: 2rem;
+
+    &::after {
+        @include subLine(50%,3px,30%);
+    }
+  }
+
+  &__allCards{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    
+    border-radius: 3rem;
+
+    @include flexRow("spE","flexS");
+    flex-wrap: wrap;
+
+    background: url("/src/several_camera_bg.jpeg") rgba($colorPrimary,0.6)center center ;
+    object-fit: cover;
+    background-blend-mode: multiply;
+  }
+}

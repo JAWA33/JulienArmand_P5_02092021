@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Personal Css link-->
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- Connect to Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ed843d0fbb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>OrinoCam - Fiche Produit</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="totalMenu">
+        <p class="logoMenu">OrinoCam</p>
+
+        <div class="classicMenu">
+          <div class="classicMenu__position">
+            <ul class="classicMenu__list">
+              <li class="classicMenu__line classicMenu__line--selected">
+                <a href="../index.html">Accueil</a>
+              </li>
+              <li class="classicMenu__line"><a href="#">Nos Produits</a></li>
+              <li class="classicMenu__line"><a href="#">Nos Conseils</a></li>
+              <li class="classicMenu__line"><a href="#">A Propos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="basketMenu">
+          <div class="basketMenu__iconBlock">
+            <a href="../html/panier.html" class="basketMenu__link">
+              <i class="basketMenu__iconBlock--icon fas fa-shopping-cart"></i>
+            </a>
+            <p class="basketMenu__iconBlock--count">0</p>
+          </div>
+        </div>
+
+        <div class="burgerMenu">
+          <input type="checkbox" class="burgerMenu__toggler" />
+          <div class="burgerMenu__icon">
+            <div class="burgerMenu__icon--lines"></div>
+          </div>
+          <div class="burgerMenu__nav">
+            <div class="menuList">
+              <nav class="menuList__block">
+                <ul class="menuList__block__list">
+                  <li class="menuList__block__list--line">
+                    <a href="../index.html">Accueil</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Produits</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Conseils</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">A Propos</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="separator separator--header"></div>
+    </header>
+
+    <main>
+      <section class="titlePage">
+        <div class="titlePage__block">
+          <h1 class="titlePage__title">OrinoCam</h1>
+          <p class="titlePage__subTitle">Page Produit</p>
+        </div>
+      </section>
+
+      <section class="blockInfo">
+        <div class="blockInfo__allContainers">
+          <div class="topContainer">
+            <img src="../src/vcam_1.jpg" alt="" class="topContainer__picture" width="500px"/>
+            <div class="topContainer__block">
+              <h2 class="topContainer__block__name">Nom de l'appareil</h2>
+              <p class="topContainer__block__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                assumenda maxime explicabo laudantium illo aut quod, distinctio
+                a nobis placeat deleniti tempora natus? Est sunt eos dolore hic,
+                totam repellendus vel aut, corrupti et aperiam sint facilis
+                ducimus omnis similique! Voluptas quos facere molestias minus
+                maiores iusto ea error impedit neque, quae, tempore amet,
+                deleniti incidunt id nemo voluptatum magnam inventore! Ducimus
+                iste facere eligendi, consequuntur accusantium dolorum nesciunt
+                eveniet fuga, error aut debitis molestias officiis est! Quidem
+                repellendus dolor nostrum nulla cum fuga vero velit ullam
+                corrupti cumque deleniti totam a, et temporibus nisi cupiditate
+                quos iste recusandae molestias?
+              </p>
+            </div>
+          </div>
+
+          <div class="bottomContainer">
+            <div class="bottomContainer__block">
+              <h2 class="bottomContainer__block__name">Ses Options</h2>
+              <form action="post" class="optionForm">
+                <div class="optionForm__select">
+                  <label for="lens-select">Sélectionnez l'objectif qui vous correspond le mieux:</label>
+                  <select name="lens" id="lens-select">
+                    <option value="obj0" selected>--Selectionnez votre objectif--</option>
+                    <option value="obj1">Objectif 35mm</option>
+                    <option value="obj2">Objectif 85mm</option>
+                    <option value="obj3">Objectif 100mm</option>
+                  </select>
+                </div>
+                <div class="optionForm__quantity">
+                  <label for="quantity">Quantité désirée :</label>
+                  <select name="quantity" id="quantity">
+                    <option value="nb0" selected>--Nombre--</option>
+                    <option value="nb1">1</option>
+                    <option value="nb2">2</option>
+                    <option value="nb3">3</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="action">
+              <div class="action__block">
+                <p class="action__block__title">Son prix :</p>
+                <p class="action__block__price">179,00€</p>
+              </div>
+              <button class="btn btn--callToAction" onclick="window.location.href = '../html/panier.html';"> Ajouter au panier</button>
+              <button class="btn btn--secondaryAction" onclick="window.location.href = '../index.html';">Voir un autre article</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="separator"></div>
+
+      <div class="footerNav">
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Conditions générales</a></li>
+          <li class="footerNav__line"><a href="#">Confidentialité</a></li>
+        </ul>
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Mentions légales</a></li>
+          <li class="footerNav__line"><a href="#">Nous contacter</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <p class="copyright__text">© Orinococo / OrniCam, 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>

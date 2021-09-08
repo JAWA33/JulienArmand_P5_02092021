@@ -1,0 +1,73 @@
+.cardProduct{
+    position: relative;
+    width: 100%;
+    height:400px;
+    @include flexCol("cen","cen");
+    
+    padding:0.5rem;
+    margin: 1rem 0rem;
+
+    @include mobile-limit{
+        width: 300px;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    @extend %borderCard;
+    background: linear-gradient(20deg,transparentize($colorBg_default, 0.5) 0%, transparentize($colorBg_light, 0.5) 100%);
+    box-shadow: 10px 15px 20px rgb(0, 0, 0);
+    backdrop-filter: blur(4px);
+
+    &:hover{
+        background: linear-gradient(30deg,$colorSecondary 10%, $colorPrimary 100%);
+        transform: scale(1.05);
+        box-shadow: 5px 5px 10px rgb(0, 0, 0);
+        transition: all 0.2s ease-in-out;
+    }
+   
+
+    &__link{
+        width: 100%;
+        height:100%;
+    }
+
+    &__picture{
+        width: 100%;
+        height: 45%;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        border: 1px solid $colorBg_light;
+        
+    }
+
+    &__info{
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+
+    &__title{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description{
+        margin-bottom: 0.5rem;
+    }
+
+    &__text{
+        width: 100%;
+        height: auto;
+
+        margin-bottom: 1.5rem;
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box; 
+        -webkit-line-clamp: 3; /* number of lines to show */ 
+        -webkit-box-orient: vertical;
+    }
+
+    &__price{
+        text-align: right;
+    }
+}

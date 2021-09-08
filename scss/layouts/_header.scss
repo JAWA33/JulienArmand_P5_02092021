@@ -1,0 +1,225 @@
+header{
+    position: relative;
+    @include flexCol("cen", "cen");
+}
+
+.totalMenu{
+    position: fixed;
+    height: $headerHeight;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    @include bg_textColor($colorBg_default);
+    @include flexRow("spB", "cen");
+}
+
+.logoMenu{
+    margin: 1.2rem 2rem;
+}
+
+.classicMenu{
+    display: none;
+    width: 65%;
+
+    @include tablet-limit{
+        @include flexRow("cen","flexE");
+    }
+
+    &__position{
+        width: 100%;
+        @include flexRow("cen","cen");
+    }
+
+    &__list{
+        width: 100%;
+        @include flexRow("spE","cen");
+        
+    }  
+
+    &__line{
+        padding: 1rem;
+
+        &:hover{
+            color: $colorPrimary;
+        }
+
+        &--selected{
+            color:$colorSecondary;
+            font-weight: 700;
+        }
+    }
+    
+
+    &__separator{
+        width: 2px;
+        height: 50px;
+        border-radius: 1px;
+        background-color: $textColor_light;
+        margin-right: 2rem;
+    }
+}
+
+.basketMenu{
+    
+    width: 60px;
+    height: 50px;
+    margin-right: 6rem;
+
+    &__iconBlock{
+        @include flexRow ("spB","cen");
+        font-size: 1.7rem;
+        margin-top: 0.6rem;
+
+        &:hover{
+            color: $colorPrimary;
+        }
+
+        &--count{
+            font-size: 1.2rem;
+        }
+    }
+}
+//* BURGER MENU for tablet and less*//
+.burgerMenu {
+    position: fixed;
+    top: 15px;
+    right:75px;
+    z-index: 1;
+
+    @include tablet-limit{
+        display: none;
+    }
+
+    &__toggler{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 60px;
+        height: 50px;
+        opacity: 0;
+
+        &:hover + .burgerMenu__icon{
+            background: $colorPrimary;
+        }
+
+        &:checked {
+            //* Rotate icon *//
+            + .burgerMenu__icon > .burgerMenu__icon--lines{
+                transform: rotate(135deg);
+
+                &::before, &::after{
+                    top: 0;
+                    transform: rotate(90deg);
+                }
+            }
+
+            //* Show menu *//
+            ~ .burgerMenu__nav{
+                visibility: visible;
+
+                //* Show background *//
+                > .menuList{
+                    transform: scale(1);
+                    transition-duration: $menuTime;
+
+                    //* Show list *//
+                    > .menuList__block{
+                        opacity: 1;
+                        transition:  opacity 0.4s ease 0.4s;
+                    }
+                }
+            }
+            
+            //* Rotate icon with hover when it's already checked*//
+            &:hover + .burgerMenu__icon > .burgerMenu__icon--lines{
+                transform: rotate(225deg);
+            }
+        }
+    }
+
+    &__icon{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 60px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 1rem;
+        background: $colorBg_light;
+        @include flexRow("cen","cen");
+
+        &--lines{
+            position: relative;
+            flex: none;
+            width: 120%;
+            height: 3px;
+            border-radius: 1.5px;
+            background: $colorBg_default;
+            @include flexRow("cen","cen");
+            transition: all 0.4s ease;
+            &::after, &::before{
+                content: '';
+                position: absolute;
+                z-index: 1;
+                top: -10px;
+                width: 100%;
+                height: 3px;
+                border-radius: 1.5px;
+                background: inherit;
+            }
+            &::after{
+                top:10px;
+            }
+        }
+    }
+
+    &__nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        @include flexRow("cen","cen");
+
+    }
+}
+
+.menuList{
+    position: relative; //! Permet de passer sur la page
+    z-index: 99; //! permet de passer sur la page
+    background: transparentize($colorBg_light, 0.1);
+    border-radius: 50%;
+    width: 300vw;
+    height: 300vw;
+    @include flexRow("cen","cen");
+    flex: none;
+    transform: scale(0);
+    transition: all 0.4s ease;
+
+    &__block{
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        &__list--line{
+            color: $textColor_default;
+            font-size: 1.5rem;
+            padding: 1rem;
+
+            &:hover{
+                color: $colorPrimary;
+                font-weight: bold;
+                transform: scale(1.4);
+                transition: all 0.4s ease;
+            }
+        }
+    }
+}

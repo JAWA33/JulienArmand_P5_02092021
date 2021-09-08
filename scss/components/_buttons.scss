@@ -1,0 +1,44 @@
+.btn{
+    width: 100%;
+    max-width: 500px;
+    height: 3rem;
+    border-radius: 1.1rem;
+    border: none;
+    margin-bottom: 1.5rem;
+
+    &--callToAction{
+        @include bg_textColor($colorSecondary);
+
+        &:hover{
+            border:1px $colorBg_light solid;
+            background: $colorPrimary;
+            color: $textColor_light;
+        }
+    }
+
+    &--secondaryAction{
+        background: transparent;
+
+        &:hover{
+            border:1px $colorBg_light solid;
+        }
+    }
+
+    &--emptyBasket{
+        width: 100%;
+        background: transparent;
+        color: $textColor_default;
+        border: 1px solid $colorBg_default;
+        margin-top: 1rem;
+
+        &:hover{
+            background:$colorBg_light;
+            cursor: pointer;
+        }
+
+        @include tablet-limit{
+            max-width: 250px;
+            margin-right: 2%;
+        }
+    }
+}
