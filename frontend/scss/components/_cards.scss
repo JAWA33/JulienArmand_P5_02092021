@@ -1,14 +1,20 @@
 .cardProduct{
     position: relative;
-    width: 300px;
-    height:450px;
+    width: 100%;
+    height:400px;
     @include flexCol("cen","cen");
     
     padding:0.5rem;
-    margin: 1rem;
+    margin: 1rem 0rem;
+
+    @include mobile-limit{
+        width: 300px;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
     @extend %borderCard;
     background: linear-gradient(20deg,transparentize($colorBg_default, 0.5) 0%, transparentize($colorBg_light, 0.5) 100%);
-    //background: rgba(255,255,255,0.1);
     box-shadow: 10px 15px 20px rgb(0, 0, 0);
     backdrop-filter: blur(4px);
 
@@ -27,7 +33,7 @@
 
     &__picture{
         width: 100%;
-        height: 40%;
+        height: 45%;
         object-fit: cover;
         border-radius: 1rem 1rem 0 0;
         border: 1px solid $colorBg_light;
@@ -40,8 +46,8 @@
     }
 
     &__title{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
     }
 
     &__description{
@@ -52,7 +58,7 @@
         width: 100%;
         height: auto;
 
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         
         overflow: hidden;
         text-overflow: ellipsis;

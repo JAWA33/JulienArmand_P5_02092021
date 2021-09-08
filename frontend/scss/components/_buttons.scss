@@ -23,4 +23,22 @@
             border:1px $colorBg_light solid;
         }
     }
+
+    &--emptyBasket{
+        width: 100%;
+        background: transparent;
+        color: $textColor_default;
+        border: 1px solid $colorBg_default;
+        margin-top: 1rem;
+
+        &:hover{
+            background:$colorBg_light;
+            cursor: pointer;
+        }
+
+        @include tablet-limit{
+            max-width: 250px;
+            margin-right: 2%;
+        }
+    }
 }

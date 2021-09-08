@@ -25,7 +25,7 @@
       }
 }
 
-.productPage{
+.blockInfo{
     width: 100%;
     max-width: 1500px;
     padding: 1rem 1rem;
@@ -44,15 +44,20 @@
         padding: 1.5rem;
         color: $textColor_light;
     }
+}
 
-    &__firstContainer{
-        @include flexCol("cen","cen");
+.topContainer{
+    @include flexCol("cen","cen");
 
-        @include desktop-limit{
-            @include flexRow("cen","flexS");
-            flex-direction: row-reverse;
-        }
+    @include desktop-limit{
+        @include flexRow("cen","flexS");
+        flex-direction: row-reverse;
     }
+
+    &--basket{
+        @include flexCol("cen", "flexS");
+    }
+    
     &__picture{
         width: 500px;
         object-fit: cover;
@@ -65,7 +70,8 @@
             margin-left: 3rem;
         }
     }
-    &__product{
+    &__block{
+        width: 100%;
         margin: 1rem 0;
 
         &__name{
@@ -82,88 +88,114 @@
         }
     }
 
-    &__secondContainer{
-        @include flexCol("cen","cen");
+    &__action{
+        width: 100%;
+        @include flexCol("cen", "cen");
 
-        @include desktop-limit{
-            @include flexRow("spB","flexS");
-            
-            margin-top: 2rem;
+        @include tablet-limit{
+            @include flexCol("cen", "flexE");
         }
+
     }
 }
 
-.productOption{
-    width: 100%;
+.bottomContainer{
+    @include flexCol("cen","cen");
+
     @include desktop-limit{
-        width: 60%;
-    }
-
-    &__title{
-        display: block;
-        position: relative;
-        margin-bottom: 2rem;
-        &::after{
-            @include subLine(65%,-5px,0%);
-        }
-    }
-
-    &__form{
+        @include flexRow("spB","flexE");
+        margin-top: 2rem;
+    };
+    
+    &__block{
         width: 100%;
-        min-height: 50px;
-        @include flexCol("spB","flexS");
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
 
         @include desktop-limit{
-            @include flexRow("spB","flexS");
+        width: 60%;
         }
 
-        &__select{
-           
-            @include flexCol("spB","stretch");
-            margin-bottom: 1rem;
-
-            @include desktop-limit{
-                width: 70%;
-            }
-
-            label{
-                margin-bottom: 1rem;
-            }
-
-            input{
-                height: 1.5rem;
+        &__name{
+            display: block;
+            position: relative;
+            margin-bottom: 2rem;
+            &::after{
+                @include subLine(65%,-5px,0%);
             }
         }
 
-        &__quantity{
-            width: 100%;
-            @include flexCol("spB","flexS");
+        &__text{
+            padding: 1rem;
             margin-bottom: 1rem;
+        }
+    }   
+}
 
-            @include desktop-limit{
-                width: 20%;
-            }
+.optionForm{
+    width: 100%;
+    min-height: 50px;
+    @include flexCol("spB","flexS");
+    margin-bottom: 0.5rem;
 
-            label{
-                margin-bottom: 1rem;
-            }
+    @include desktop-limit{
+        @include flexRow("spB","flexS");
+    }
 
-            input{
-                width: 120px;
-                height: 1.5rem;
-            }
+    &__select{
+        
+        @include flexCol("spB","stretch");
+        margin-bottom: 1rem;
+
+        @include desktop-limit{
+            width: 70%;
+        }
+
+        label{
+            margin-bottom: 1rem;
+        }
+
+        select{
+            color: $textColor_default;
+            padding: 2px 5px;
+        }
+    }
+
+    &__quantity{
+        width: 100%;
+        @include flexCol("spB","flexS");
+        margin-bottom: 1rem;
+
+        @include desktop-limit{
+            width: 20%;
+        }
+
+        label{
+            margin-bottom: 1rem;
+        }
+
+        select{
+            width: 120px;
+            color: $textColor_default;
+            padding: 2px 5px;
         }
     }
 }
 
 .action{
     width: 100%;
+    height: 100%;
     @include flexCol("cen", "cen");
 
     @include desktop-limit{
         width: 35%;
 
+    }
+
+    &--basket{
+        @include desktop-limit{
+           width: 50%; 
+        }
+        
     }
 
     &__blockPrice{
@@ -173,9 +205,85 @@
         &__title{
             margin-bottom: 1rem;
         }
+    }
 
-        &__price{
-            //! A voir si nécessaire !//
+    &__required{
+        width: auto;
+        height: auto;
+        border: 1px red solid;
+        border-radius: 1rem;
+        background:$colorBg_light;
+        color: red;
+        padding: 1rem 2rem;
+        margin: 1rem;
+    }
+}
+
+.basketTable{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+
+    &__row--description{
+        line-height: 3rem;
+    }
+
+    &__col{
+        &--first{
+            text-align: left;
+        }
+        &--second{
+            text-align: center;
+        }
+        &--third{
+            text-align: right;
         }
     }
+
+    &__separator{
+        position: relative;
+        width: 100%;
+        height: 5px;
+        
+        &--head::after{
+            @include subLine(100%,0px,0%);
+        }
+
+        &--foot::after{
+            @include subLine(100%,45px,0%);
+        }
+    }
+}
+
+.information__form{
+    width: 100%;
+    @include flexRow("cen","cen");
+    flex-wrap: wrap;
+    padding: 0 1rem 1rem 1rem;
+
+    &__select{
+        width: 100%;
+        padding: 0.5rem;
+        @include flexCol("cen","flexS");
+
+        @include tablet-limit{
+            width: 50%;
+        }
+        label{
+            margin-bottom: 0.5rem;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            color: $textColor_default;
+            border-radius: 0.5rem;
+        }
+        &--full{
+            width: 100%;
+
+            
+        }
+    }
+
 }

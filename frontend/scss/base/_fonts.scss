@@ -25,19 +25,26 @@ h3,.cardProduct__price{
     font-size: 2.5rem;
 }
 
-p, li, label, .btn{
+p, li, label, .btn, select, table, input{
     font-family: 'Roboto', sans-serif;
 }
 
-li{
+li, th{
     font-weight: 400;
     font-size: 1.1rem;
 }
 
-p, label{
+p, label, select, td, input{
     font-weight: 300;
     font-size: 1rem;
+}
+
+p, label, select{
     line-height: 1.2rem;
+}
+
+td{
+    line-height: 2.4rem;
 }
 
 .btn{
@@ -49,6 +56,10 @@ p, label{
         font-size: 1rem;
         font-style: italic;
         font-weight: 300;
+    }
+
+    &--emptyBasket{
+        font-size: 1.1rem;
     }
     
 }
