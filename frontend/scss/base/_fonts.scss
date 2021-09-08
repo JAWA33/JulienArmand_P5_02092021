@@ -4,7 +4,7 @@
 
 
 //* Font type *//
-h1, h2, h3, .logoMenu, .cardProduct__price, .action__blockPrice__price{
+h1, h2, h3, .logoMenu, .cardProduct__price, .action__block__price{
     font-family: 'Montez', cursive, arial;
     font-weight: normal;
 }
@@ -17,11 +17,11 @@ h3,.cardProduct__price{
     font-size: 2rem;
 }
 
-.logoMenu{
+.logoMenu, .action__block__command{
     font-size: 2.2rem;
 }
 
-.action__blockPrice__price, .productOption__title, .productPage__product__name{
+.action__block__price, .productOption__title, .productPage__product__name{
     font-size: 2.5rem;
 }
 

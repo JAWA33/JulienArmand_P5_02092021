@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Personal Css link-->
+    <link rel="stylesheet" href="/frontend/css/main.css" />
+    <!-- Connect to Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/ed843d0fbb.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>OrinoCam - Commande</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="totalMenu">
+        <p class="logoMenu">OrinoCam</p>
+
+        <div class="classicMenu">
+          <div class="classicMenu__position">
+            <ul class="classicMenu__list">
+              <li class="classicMenu__line classicMenu__line--selected">
+                <a href="/frontend/index.html">Accueil</a>
+              </li>
+              <li class="classicMenu__line"><a href="#">Nos Produits</a></li>
+              <li class="classicMenu__line"><a href="#">Nos Conseils</a></li>
+              <li class="classicMenu__line"><a href="#">A Propos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="basketMenu">
+          <div class="basketMenu__iconBlock">
+            <a href="#" class="basketMenu__link">
+              <i class="basketMenu__iconBlock--icon fas fa-shopping-cart"></i>
+            </a>
+            <p class="basketMenu__iconBlock--count">0</p>
+          </div>
+        </div>
+
+        <div class="burgerMenu">
+          <input type="checkbox" class="burgerMenu__toggler" />
+          <div class="burgerMenu__icon">
+            <div class="burgerMenu__icon--lines"></div>
+          </div>
+          <div class="burgerMenu__nav">
+            <div class="menuList">
+              <nav class="menuList__block">
+                <ul class="menuList__block__list">
+                  <li class="menuList__block__list--line">
+                    <a href="/frontend/index.html">Accueil</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Produits</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">Nos Conseils</a>
+                  </li>
+                  <li class="menuList__block__list--line">
+                    <a href="#">A Propos</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="separator separator--header"></div>
+    </header>
+
+    <main>
+        <section class="titlePage">
+            <div class="titlePage__block">
+            <h1 class="titlePage__title">OrinoCam</h1>
+            <p class="titlePage__subTitle">Validation de la commande</p>
+            </div>
+        </section>
+
+        <section class="blockInfo">
+            <div class="blockInfo__allContainers blockInfo__allContainers--command">
+                <div class="topContainer topContainer--command">
+                    <div class="topContainer__block topContainer__block--command">
+                        <h2 class="topContainer__block__name topContainer__block__name--command">Merci pour votre commande !</h2>            
+                        <img src="/frontend/src/heart_hands_order.jpg" alt="" class="topContainer__picture topContainer__picture--command" width="500px"/>
+                        <p class="topContainer__block__description--command">
+                            Votre commande a bien été enregistrée et vous sera envoyée dans les meilleurs délais :
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bottomContainer bottomContainer--command">
+                    <div class="bottomContainer__block bottomContainer__block--command">
+                        <h2 class="bottomContainer__block__name">Vos informations</h2>
+                    </div>
+                    <div class="action action--command">
+                        <div class="action__block action__block--command">
+                            <p class="action__block__title">Votre numéro de commande :</p>
+                            <p class="action__block__command">17183 - RTP - 3490</p>
+                        </div>
+                        <div class="action__block  action__block--command">
+                            <p class="action__block__title">Total de votre commande :</p>
+                            <p class="action__block__price">299,50 €</p>
+                        </div>
+                        <button class="btn btn--callToAction" onclick="window.location.href = '/frontend/index.html';">Retour à la page d'accueil</button>
+                    </div>
+                </div> 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+      <div class="separator"></div>
+
+      <div class="footerNav">
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Conditions générales</a></li>
+          <li class="footerNav__line"><a href="#">Confidentialité</a></li>
+        </ul>
+        <ul class="footerNav__part">
+          <li class="footerNav__line"><a href="#">Mentions légales</a></li>
+          <li class="footerNav__line"><a href="#">Nous contacter</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <p class="copyright__text">© Orinococo / OrniCam, 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>
