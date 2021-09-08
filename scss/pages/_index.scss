@@ -4,7 +4,7 @@
   width: 100%;
   height: 70vh;
   min-height: 450px;
-  background: url("../src/oldcam_bg_mobile.jpg") no-repeat top center;
+  background: url("../../src/oldcam_bg_mobile.jpg") no-repeat top center;
   @include bg_textColor($colorBg_default);
   @extend %headerGap;
 
@@ -14,7 +14,7 @@
 
   @include tablet-limit {
     width: 80%;
-    background: url("../src/oldcam_bg_tablet.jpg") no-repeat top right;
+    background: url("../../src/oldcam_bg_tablet.jpg") no-repeat top right;
   }
 
   &__block {
@@ -89,7 +89,7 @@
     @include flexRow("spE","flexS");
     flex-wrap: wrap;
 
-    background: url("../src/several_camera_bg.jpeg") rgba($colorPrimary,0.6)center center ;
+    background: url("../../src/several_camera_bg.jpeg") rgba($colorPrimary,0.6)center center ;
     object-fit: cover;
     background-blend-mode: multiply;
   }
