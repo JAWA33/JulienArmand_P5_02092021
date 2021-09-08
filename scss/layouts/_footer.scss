@@ -1,12 +1,12 @@
 footer{
     width: 100%;
-    background: $colorBg_default url("/src/oldcam_footer.jpg") no-repeat center right;
+    background: $colorBg_default url("../src/oldcam_footer.jpg") no-repeat center right;
 
     @include flexCol("cen","cen");
     @include bg_textColor($colorBg_default);
 
     @include mobile-limit{
-        background: $colorBg_default url("/src/oldcam_footer.jpg") no-repeat center center;
+        background: $colorBg_default url("../src/oldcam_footer.jpg") no-repeat center center;
     }
 }
 
