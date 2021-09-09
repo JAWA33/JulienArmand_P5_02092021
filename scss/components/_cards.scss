@@ -16,7 +16,7 @@
     @extend %borderCard;
     background: linear-gradient(20deg,transparentize($colorBg_default, 0.5) 0%, transparentize($colorBg_light, 0.5) 100%);
     box-shadow: 10px 15px 20px rgb(0, 0, 0);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px); //! fonction expérimentale : erreur dans validator CSS !//
 
     &:hover{
         background: linear-gradient(30deg,$colorSecondary 10%, $colorPrimary 100%);

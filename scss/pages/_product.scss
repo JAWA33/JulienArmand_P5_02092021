@@ -197,7 +197,7 @@
 
     &__select{
         
-        @include flexCol("spB","stretch");
+        @include flexCol("spB",stretch);
         margin-bottom: 1rem;
 
         @include desktop-limit{

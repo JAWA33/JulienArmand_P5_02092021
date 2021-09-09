@@ -893,7 +893,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: "stretch";
+  align-items: stretch;
   margin-bottom: 1rem;
 }
 @media screen and (min-width: 1200px) {
