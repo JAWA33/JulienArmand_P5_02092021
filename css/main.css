@@ -48,6 +48,10 @@ main {
   background: linear-gradient(270deg, white 0%, #0B0B0D 70%);
 }
 
+.dontShow {
+  display: none;
+}
+
 h1, h2, h3, .logoMenu, .cardProduct__price, .action__block__price {
   font-family: "Montez", cursive, arial;
   font-weight: normal;
@@ -172,6 +176,8 @@ td {
   transform: scale(1.05);
   box-shadow: 5px 5px 10px black;
   transition: all 0.2s ease-in-out;
+  -webkit-backdrop-filter: initial;
+          backdrop-filter: initial;
 }
 .cardProduct__link {
   width: 100%;
@@ -182,7 +188,7 @@ td {
   height: 45%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0;
   border: 1px solid white;
 }
 .cardProduct__info {
