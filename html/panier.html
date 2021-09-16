@@ -8,7 +8,10 @@
     <!--Personal Css link-->
     <link rel="stylesheet" href="../css/main.css" />
     <!-- Connect to Fontawesome -->
-    <script src="https://kit.fontawesome.com/ed843d0fbb.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/ed843d0fbb.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>OrinoCam - Panier</title>
   </head>
@@ -71,99 +74,123 @@
       <div class="separator separator--header"></div>
     </header>
 
-<main>
-    <section class="titlePage">
-    <div class="titlePage__block">
-        <h1 class="titlePage__title">OrinoCam</h1>
-        <p class="titlePage__subTitle">Votre Panier</p>
-    </div>
-    </section>
+    <main>
+      <section class="titlePage">
+        <div class="titlePage__block">
+          <h1 class="titlePage__title">OrinoCam</h1>
+          <p class="titlePage__subTitle">Votre Panier</p>
+        </div>
+      </section>
 
-    <section class="blockInfo">
+      <section class="blockInfo">
         <div class="blockInfo__allContainers">
           <div class="topContainer--basket">
-              <div class="topContainer__block">
-                  <h2 class="topContainer__block__name">Récapitulatif de votre panier</h2>
-                  <table class="basketTable">
-                      <thead class="basketTable__separator basketTable__separator--head">
-                          <tr class="basketTable__row basketTable__row--description">
-                              <th class="basketTable__col basketTable__col--first">Produit</th>
-                              <th class="basketTable__col basketTable__col--second">Nbre</th>
-                              <th class="basketTable__col basketTable__col--third">Prix</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr class="basketTable__row">
-                              <td class="basketTable__col basketTable__col--first">Pentax 50XYZ</td>
-                              <td class="basketTable__col basketTable__col--second">1</td>
-                              <td class="basketTable__col basketTable__col--third">179,00€</td>
-                          </tr>
-                          <tr class="basketTable__row">
-                              <td class="basketTable__col basketTable__col--first">Minolta 1732</td>
-                              <td class="basketTable__col basketTable__col--second">2</td>
-                              <td class="basketTable__col basketTable__col--third">120,50€</td>
-                          </tr>
-                          
-                      </tbody>
-                      <tfoot class="basketTable__separator basketTable__separator--foot">
-                          <tr class="basketTable__row basketTable__row--description">
-                              <th class="basketTable__col basketTable__col--first">Total du panier</th>
-                              <th class="basketTable__col basketTable__col--second">3</th>
-                              <th class="basketTable__col basketTable__col--third">299,50€</th>
-                          </tr>
-                      </tfoot>
-                      
-                  </table>
-              </div>
-              <div class="topContainer__action">
-                  <button class="btn btn--emptyBasket">Vider mon panier</button>
-              </div>
+            <div class="topContainer__block">
+              <h2 class="topContainer__block__name">
+                Récapitulatif de votre panier
+              </h2>
+              <table class="basketTable">
+                <thead
+                  class="basketTable__separator basketTable__separator--head"
+                >
+                  <tr class="basketTable__row basketTable__row--description">
+                    <th class="basketTable__col basketTable__col--first">
+                      Produit
+                    </th>
+                    <th class="basketTable__col basketTable__col--second">
+                      Nbre
+                    </th>
+                    <th class="basketTable__col basketTable__col--third">
+                      Prix
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="resultBasket"></tbody>
+                <tfoot
+                  class="basketTable__separator basketTable__separator--foot"
+                >
+                  <tr class="basketTable__row basketTable__row--description">
+                    <th class="basketTable__col basketTable__col--first">
+                      Total du panier
+                    </th>
+                    <th class="basketTable__col basketTable__col--second">3</th>
+                    <th class="basketTable__col basketTable__col--third">
+                      299,50€
+                    </th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="topContainer__action">
+              <button class="btn btn--emptyBasket">Vider mon panier</button>
+            </div>
           </div>
 
           <div class="bottomContainer">
-              <div class="bottomContainer__block">
-                  <h2 class="bottomContainer__block__name">Votre adresse de livraison</h2>
-                  <p class="bottomContainer__block__text">Merci de communiquer vos coordonnées pour que nous puissions vous envoyer votre commande dans les meilleurs délais :</p>
-                  <form action="post" class="information__form">
-                      <div class="information__form__select">
-                          <label for="lastName">Nom :</label>
-                          <input type="text" name="nom" id="lastName">
-                      </div>
-                      <div class="information__form__select">
-                          <label for="firstName">Prénom :</label>
-                          <input type="text" name="prenom" id="firstName">
-                      </div>
-                      <div class="information__form__select">
-                          <label for="phoneNumber">Numéro de téléphone :</label>
-                          <input type="text" name="numero" id="phoneNumber">
-                      </div>
-                      <div class="information__form__select">
-                          <label for="email">Adresse mail valide :</label>
-                          <input type="text" name="email" id="email">
-                      </div>
-                      <div class="information__form__select information__form__select--full">
-                          <label for="adress">Adresse postale :</label>
-                          <input type="text" name="adresse" id="adress">
-                      </div>
-                      <div class="information__form__select">
-                          <label for="zipCode">Code postal :</label>
-                          <input type="text" name="code" id="zipCode">
-                      </div>
-                      <div class="information__form__select">
-                          <label for="city">Ville :</label>
-                          <input type="text" name="ville" id="city">
-                      </div>
-                  </form>
+            <div class="bottomContainer__block">
+              <h2 class="bottomContainer__block__name">
+                Votre adresse de livraison
+              </h2>
+              <p class="bottomContainer__block__text">
+                Merci de communiquer vos coordonnées pour que nous puissions
+                vous envoyer votre commande dans les meilleurs délais :
+              </p>
+              <form action="post" class="information__form">
+                <div class="information__form__select">
+                  <label for="lastName">Nom :</label>
+                  <input type="text" name="nom" id="lastName" />
+                </div>
+                <div class="information__form__select">
+                  <label for="firstName">Prénom :</label>
+                  <input type="text" name="prenom" id="firstName" />
+                </div>
+                <div class="information__form__select">
+                  <label for="phoneNumber">Numéro de téléphone :</label>
+                  <input type="text" name="numero" id="phoneNumber" />
+                </div>
+                <div class="information__form__select">
+                  <label for="email">Adresse mail valide :</label>
+                  <input type="text" name="email" id="email" />
+                </div>
+                <div
+                  class="
+                    information__form__select information__form__select--full
+                  "
+                >
+                  <label for="adress">Adresse postale :</label>
+                  <input type="text" name="adresse" id="adress" />
+                </div>
+                <div class="information__form__select">
+                  <label for="zipCode">Code postal :</label>
+                  <input type="text" name="code" id="zipCode" />
+                </div>
+                <div class="information__form__select">
+                  <label for="city">Ville :</label>
+                  <input type="text" name="ville" id="city" />
+                </div>
+              </form>
+            </div>
+            <div class="action action--basket">
+              <div class="action__required">
+                Merci de remplir tous les champs avant de passer la commande
               </div>
-              <div class="action action--basket">
-                  <div class="action__required">Merci de remplir tous les champs avant de passer la commande</div>
-                  <div class="action__block">
-                      <p class="action__block__title">Montant total du panier:</p>
-                      <p class="action__block__price">299,50€</p>
-                  </div>
-                  <button class="btn btn--callToAction" onclick="window.location.href = '../html/commande.html';">Passer la commande</button>
-                  <button class="btn btn--secondaryAction" onclick="window.location.href = '../index.html';">Continuer mes achats</button>
+              <div class="action__block">
+                <p class="action__block__title">Montant total du panier:</p>
+                <p class="action__block__price">299,50€</p>
               </div>
+              <button
+                class="btn btn--callToAction"
+                onclick="window.location.href = '../html/commande.html';"
+              >
+                Passer la commande
+              </button>
+              <button
+                class="btn btn--secondaryAction"
+                onclick="window.location.href = '../index.html';"
+              >
+                Continuer mes achats
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -187,5 +214,8 @@
         <p class="copyright__text">© Orinococo / OrniCam, 2021</p>
       </div>
     </footer>
+
+    <script src="/js/libs.js"></script>
+    <script src="/js/panier.js"></script>
   </body>
 </html>

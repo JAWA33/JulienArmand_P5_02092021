@@ -133,11 +133,10 @@
                 </div>
                 <div class="optionForm__quantity">
                   <label for="quantity">Quantité désirée :</label>
-                  <select name="quantity" id="quantity">
-                    <option value="nb0" selected>--Nombre--</option>
-                    <option value="nb1">1</option>
-                    <option value="nb2">2</option>
-                    <option value="nb3">3</option>
+                  <select name="quantity" id="quantitySelected">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                   </select>
                 </div>
               </form>
@@ -147,12 +146,11 @@
                 <p class="action__block__title">Son prix :</p>
                 <p class="action__block__price" id="priceProduct">179,00€</p>
               </div>
-              <button
-                class="btn btn--callToAction"
-                onclick="window.location.href = '../html/panier.html';"
-              >
-                Ajouter au panier
-              </button>
+              <div id="changeButton">
+                <button class="btn btn--callToAction" id="addToBasket">
+                  Ajouter au panier
+                </button>
+              </div>
               <button
                 class="btn btn--secondaryAction"
                 onclick="window.location.href = '../index.html';"
