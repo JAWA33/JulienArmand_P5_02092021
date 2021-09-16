@@ -1,355 +1,363 @@
+.titlePage {
+  @extend %headerGap;
+  @include bg_textColor($colorBg_default);
+  @include flexRow("cen", "cen");
+  width: 100%;
 
-.titlePage{
-    @extend %headerGap;
-    @include bg_textColor($colorBg_default);
-    @include flexRow ("cen","cen");
-    width: 100%;
+  &__title {
+    display: block;
+    position: relative;
+    width: auto;
+    font-size: 4rem;
+    margin-top: 2rem;
 
-    &__title {
-        display: block;
-        position: relative;
-        width: auto;
-        font-size: 4rem;
-        margin-top: 2rem;
-    
-        &::after {
-            @include subLine(60%,5px,25%);
-        }
-      }
-    
-      &__subTitle {
-        width: auto;
-        font-size: 1.5rem;
-        padding-left: 10rem;
-        margin-bottom: 2rem;
-      }
-}
+    &::after {
+      @include subLine(60%, 5px, 25%);
+    }
+  }
 
-.blockInfo{
-    width: 100%;
-    max-width: 1500px;
-    padding: 1rem 1rem;
+  &__subTitle {
+    width: auto;
+    font-size: 1.5rem;
+    padding-left: 10rem;
     margin-bottom: 2rem;
-    margin-right: auto;
-    margin-left: auto;
-
-    @include mobile-limit{
-        padding: 1rem 4rem;
-    }
-
-    &__allContainers{
-        width: 100%;
-        background: linear-gradient(240deg,transparentize($colorBg_light,0.3) 0%,$colorBg_default 76%);
-        @extend %borderCard;
-        padding: 1.5rem;
-        color: $textColor_light;
-
-        &--command{
-            @include desktop-limit{
-                @include flexRow("spB","cen");
-            }
-        }
-    }
+  }
 }
 
-.topContainer{
-    @include flexCol("cen","cen");
+.blockInfo {
+  width: 100%;
+  max-width: 1500px;
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+  margin-right: auto;
+  margin-left: auto;
 
-    @include desktop-limit{
-        @include flexRow("cen","flexS");
-        flex-direction: row-reverse;
-    }
+  @include mobile-limit {
+    padding: 1rem 4rem;
+  }
 
-    &--basket{
-        @include flexCol("cen", "flexS");
-    }
-
-    &--command{
-        @include desktop-limit{
-            width: 50%;
-        }
-    }
-
-    
-    &__picture{
-        width: 500px;
-        object-fit: cover;
-        border-radius: 1rem;
-        border: 1px solid $colorBg_light;
-
-        @include desktop-limit{
-            width: 40%;
-            max-width: 400px;
-            margin-left: 3rem;
-        }
-
-        &--command{
-            @include desktop-limit{
-                width: 100%;
-                max-width: 500px;
-                margin-left: 0;
-            }
-        }
-    }
-    &__block{
-        width: 100%;
-        margin: 1rem 0;
-
-        &--command{
-           @include flexCol("cen", "cen"); 
-        }
-        
-
-        &__name{
-            display: block;
-            position: relative;
-            margin-bottom: 2rem;
-            &::after{
-                @include subLine(65%,-5px,0%);
-            }
-            &--command{
-                text-align: center;
-            }
-            &--command::after{
-                @include subLine(0%,0px,0%);
-            }
-        }
-
-        &__description{
-            text-indent: 5%;
-
-            &--command{
-                text-indent: 0%;
-                max-width: 500px;
-                padding: 1rem 0;
-            }
-        }
-    }
-
-    &__action{
-        width: 100%;
-        @include flexCol("cen", "cen");
-
-        @include tablet-limit{
-            @include flexCol("cen", "flexE");
-        }
-
-    }
-}
-
-.bottomContainer{
-    @include flexCol("cen","cen");
-
-    @include desktop-limit{
-        @include flexRow("spB","flexE");
-        margin-top: 2rem;
-    };
-
-    &--command{
-        @include desktop-limit{
-            width: 50%;
-            height: 100%;
-            margin-top: 0;
-            @include flexCol("cen","cen");
-        }
-    }
-    
-    &__block{
-        width: 100%;
-        margin-bottom: 1rem;
-
-        @include desktop-limit{
-        width: 60%;
-        }
-
-        &--command{
-            @include desktop-limit{
-                width: 90%;
-                margin-right: 2rem;
-            }
-        }
-
-        &__name{
-            display: block;
-            position: relative;
-            margin-bottom: 2rem;
-            &::after{
-                @include subLine(65%,-5px,0%);
-            }
-        }
-
-        &__text{
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-    }   
-}
-
-.optionForm{
+  &__allContainers {
     width: 100%;
-    min-height: 50px;
-    @include flexCol("spB","flexS");
-    margin-bottom: 0.5rem;
+    background: linear-gradient(
+      240deg,
+      transparentize($colorBg_light, 0.3) 0%,
+      $colorBg_default 76%
+    );
+    @extend %borderCard;
+    padding: 1.5rem;
+    color: $textColor_light;
 
-    @include desktop-limit{
-        @include flexRow("spB","flexS");
+    &--command {
+      @include desktop-limit {
+        @include flexRow("spB", "cen");
+      }
     }
-
-    &__select{
-        
-        @include flexCol("spB",stretch);
-        margin-bottom: 1rem;
-
-        @include desktop-limit{
-            width: 70%;
-        }
-
-        label{
-            margin-bottom: 1rem;
-        }
-
-        select{
-            color: $textColor_default;
-            padding: 2px 5px;
-        }
-    }
-
-    &__quantity{
-        width: 100%;
-        @include flexCol("spB","flexS");
-        margin-bottom: 1rem;
-
-        @include desktop-limit{
-            width: 20%;
-        }
-
-        label{
-            margin-bottom: 1rem;
-        }
-
-        select{
-            width: 120px;
-            color: $textColor_default;
-            padding: 2px 5px;
-        }
-    }
+  }
 }
 
-.action{
+.topContainer {
+  @include flexCol("cen", "cen");
+
+  @include desktop-limit {
+    @include flexRow("cen", "flexS");
+    flex-direction: row-reverse;
+  }
+
+  &--basket {
+    @include flexCol("cen", "flexS");
+  }
+
+  &--command {
+    @include desktop-limit {
+      width: 50%;
+    }
+  }
+
+  &__picture {
+    width: 500px;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid $colorBg_light;
+
+    @include desktop-limit {
+      width: 40%;
+      max-width: 400px;
+      margin-left: 3rem;
+    }
+
+    &--command {
+      @include desktop-limit {
+        width: 100%;
+        max-width: 500px;
+        margin-left: 0;
+      }
+    }
+  }
+  &__block {
     width: 100%;
-    height: 100%;
+    margin: 1rem 0;
+
+    &--command {
+      @include flexCol("cen", "cen");
+    }
+
+    &__name {
+      display: block;
+      position: relative;
+      margin-bottom: 2rem;
+      &::after {
+        @include subLine(65%, -5px, 0%);
+      }
+      &--command {
+        text-align: center;
+      }
+      &--command::after {
+        @include subLine(0%, 0px, 0%);
+      }
+    }
+
+    &__description {
+      text-indent: 5%;
+
+      &--command {
+        text-indent: 0%;
+        max-width: 500px;
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  &__action {
+    width: 100%;
     @include flexCol("cen", "cen");
 
-    @include desktop-limit{
-        width: 35%;
-
+    @include tablet-limit {
+      @include flexCol("cen", "flexE");
     }
-
-    &--basket{
-        @include desktop-limit{
-           width: 50%; 
-        } 
-    }
-
-    &--command{
-        @include desktop-limit{
-           width: 100%;
-        } 
-    }
-
-
-    &__block{
-        @include flexCol("cen","cen");
-        margin-bottom: 2rem;
-
-        &--command{
-            @include desktop-limit{
-                margin-bottom: 3.5rem;
-            } 
-        }
-
-        &__title{
-            margin-bottom: 1rem;
-        }
-    }
-
-    &__required{
-        width: auto;
-        height: auto;
-        border: 1px red solid;
-        border-radius: 1rem;
-        background:$colorBg_light;
-        color: red;
-        padding: 1rem 2rem;
-        margin: 1rem;
-    }
+  }
 }
 
-.basketTable{
+.bottomContainer {
+  @include flexCol("cen", "cen");
+
+  @include desktop-limit {
+    @include flexRow("spB", "flexE");
+    margin-top: 2rem;
+  }
+
+  &--command {
+    @include desktop-limit {
+      width: 50%;
+      height: 100%;
+      margin-top: 0;
+      @include flexCol("cen", "cen");
+    }
+  }
+
+  &__block {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    
+    margin-bottom: 1rem;
 
-    &__row--description{
-        line-height: 3rem;
+    @include desktop-limit {
+      width: 60%;
     }
 
-    &__col{
-        &--first{
-            text-align: left;
-        }
-        &--second{
-            text-align: center;
-        }
-        &--third{
-            text-align: right;
-        }
+    &--command {
+      @include desktop-limit {
+        width: 90%;
+        margin-right: 2rem;
+      }
     }
 
-    &__separator{
-        position: relative;
-        width: 100%;
-        height: 5px;
-        
-        &--head::after{
-            @include subLine(100%,0px,0%);
-        }
-
-        &--foot::after{
-            @include subLine(100%,45px,0%);
-        }
+    &__name {
+      display: block;
+      position: relative;
+      margin-bottom: 2rem;
+      &::after {
+        @include subLine(65%, -5px, 0%);
+      }
     }
+
+    &__text {
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
-.information__form{
-    width: 100%;
-    @include flexRow("cen","cen");
-    flex-wrap: wrap;
-    padding: 0 1rem 1rem 1rem;
+.optionForm {
+  width: 100%;
+  min-height: 50px;
+  @include flexCol("spB", "flexS");
+  margin-bottom: 0.5rem;
 
-    &__select{
-        width: 100%;
-        padding: 0.5rem;
-        @include flexCol("cen","flexS");
+  @include desktop-limit {
+    @include flexRow("spB", "flexS");
+  }
 
-        @include tablet-limit{
-            width: 50%;
-        }
-        label{
-            margin-bottom: 0.5rem;
-        }
-        input {
-            width: 100%;
-            height: 30px;
-            color: $textColor_default;
-            border-radius: 0.5rem;
-        }
-        &--full{
-            width: 100%;
+  &__select {
+    @include flexCol("spB", stretch);
+    margin-bottom: 1rem;
 
-            
-        }
+    @include desktop-limit {
+      width: 70%;
     }
 
+    label {
+      margin-bottom: 1rem;
+    }
+
+    select {
+      color: $textColor_default;
+      padding: 2px 5px;
+    }
+  }
+
+  &__quantity {
+    width: 100%;
+    @include flexCol("spB", "flexS");
+    margin-bottom: 1rem;
+
+    @include desktop-limit {
+      width: 20%;
+    }
+
+    label {
+      margin-bottom: 1rem;
+    }
+
+    select {
+      width: 120px;
+      color: $textColor_default;
+      padding: 2px 5px;
+    }
+  }
+}
+
+.action {
+  width: 100%;
+  height: 100%;
+  @include flexCol("cen", "cen");
+
+  @include desktop-limit {
+    width: 35%;
+  }
+
+  &--basket {
+    @include desktop-limit {
+      width: 50%;
+    }
+  }
+
+  &--command {
+    @include desktop-limit {
+      width: 100%;
+    }
+  }
+
+  &__block {
+    @include flexCol("cen", "cen");
+    margin-bottom: 2rem;
+
+    &--command {
+      @include desktop-limit {
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__required {
+    width: auto;
+    height: auto;
+    border: 1px red solid;
+    border-radius: 1rem;
+    background: $colorBg_light;
+    color: red;
+    padding: 1rem 2rem;
+    margin: 1rem;
+  }
+}
+
+.basketTable {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__row--description {
+    line-height: 3rem;
+  }
+
+  &__col {
+    &--first {
+      text-align: left;
+    }
+    &--second {
+      text-align: center;
+    }
+    &--third {
+      text-align: right;
+    }
+  }
+
+  &__separator {
+    position: relative;
+    width: 100%;
+    height: 5px;
+
+    &--head::after {
+      @include subLine(100%, 0px, 0%);
+    }
+
+    &--foot::after {
+      @include subLine(100%, 45px, 0%);
+    }
+  }
+}
+
+.information__form {
+  width: 100%;
+  @include flexRow("cen", "cen");
+  flex-wrap: wrap;
+  padding: 0 1rem 1rem 1rem;
+
+  &__select {
+    width: 100%;
+    padding: 0.5rem;
+    @include flexCol("cen", "flexS");
+
+    @include tablet-limit {
+      width: 50%;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+    input {
+      width: 100%;
+      height: 30px;
+      color: $textColor_default;
+      border-radius: 0.5rem;
+    }
+    &--full {
+      width: 100%;
+    }
+  }
+}
+
+// class for javascript
+
+.noBasket {
+  width: 100%;
+  height: 100%;
+  @include flexRow("cen", "cen");
+  margin-bottom: 2rem;
+
+  &__text {
+    padding: 1rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
 }

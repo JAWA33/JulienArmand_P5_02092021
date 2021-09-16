@@ -49,7 +49,7 @@ const button_addToBasket = document.getElementById("addToBasket");
 const button_changeButton = document.getElementById("changeButton");
 let itemSelected = [];
 
-//! Validation commande et modiciation du bouton d'ajout ------------------------------------
+//! Validation commande et modification du bouton d'ajout ------------------------------------
 const validConfirm = () => {
   button_changeButton.innerHTML = `
       <button class="btn btn--validAction" id="seeBasket">
@@ -62,6 +62,7 @@ const validConfirm = () => {
   goToBasket.addEventListener("click", () => {
     window.location.href = "/html/panier.html";
   });
+  refreshCounter(); //fonction dans lib.js
 };
 //! Validation commande et modiciation du bouton d'ajout ---------------------------------------
 
@@ -84,8 +85,8 @@ button_addToBasket.addEventListener("click", (event) => {
 
   //* Vérification dans le localStorage de la présence d'un panier
 
-  let myBasket = localStorage.getItem("myBasket"); //. JSON
-  let actualBasket = JSON.parse(myBasket); // version JS de myBasket
+  //let myBasket = localStorage.getItem("myBasket"); //. JSON
+  //let actualBasket = JSON.parse(myBasket); // version JS de myBasket
 
   //* on choisit la valeur de l'ID à tester
   function testID(test) {

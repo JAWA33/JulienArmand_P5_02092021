@@ -1079,4 +1079,19 @@ body {
 }
 .information__form__select--full {
   width: 100%;
+}
+
+.noBasket {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.noBasket__text {
+  padding: 1rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }/*# sourceMappingURL=main.css.map */

@@ -39,7 +39,7 @@
             <a href="../html/panier.html" class="basketMenu__link">
               <i class="basketMenu__iconBlock--icon fas fa-shopping-cart"></i>
             </a>
-            <p class="basketMenu__iconBlock--count">0</p>
+            <p class="basketMenu__iconBlock--count" id="myCounter">0</p>
           </div>
         </div>
 
@@ -89,7 +89,7 @@
               <h2 class="topContainer__block__name">
                 Récapitulatif de votre panier
               </h2>
-              <table class="basketTable">
+              <table class="basketTable" id="noBasket">
                 <thead
                   class="basketTable__separator basketTable__separator--head"
                 >
@@ -113,20 +113,30 @@
                     <th class="basketTable__col basketTable__col--first">
                       Total du panier
                     </th>
-                    <th class="basketTable__col basketTable__col--second">3</th>
-                    <th class="basketTable__col basketTable__col--third">
-                      299,50€
+                    <th
+                      class="basketTable__col basketTable__col--second"
+                      id="nbreTotal"
+                    >
+                      0
+                    </th>
+                    <th
+                      class="basketTable__col basketTable__col--third"
+                      id="priceTotal"
+                    >
+                      0€
                     </th>
                   </tr>
                 </tfoot>
               </table>
             </div>
-            <div class="topContainer__action">
-              <button class="btn btn--emptyBasket">Vider mon panier</button>
+            <div class="topContainer__action" id="indexButton">
+              <button class="btn btn--emptyBasket" id="clearBasket">
+                Vider mon panier
+              </button>
             </div>
           </div>
 
-          <div class="bottomContainer">
+          <div class="bottomContainer" id="deliveryAdress">
             <div class="bottomContainer__block">
               <h2 class="bottomContainer__block__name">
                 Votre adresse de livraison

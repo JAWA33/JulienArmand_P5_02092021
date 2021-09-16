@@ -1,40 +1,66 @@
 console.log("connected!");
 
 const result_Basket = document.getElementById("resultBasket");
-console.log(result_Basket.value);
+const nbreTotal = document.getElementById("nbreTotal");
+const priceTotal = document.getElementById("priceTotal");
+const noBasket = document.getElementById("noBasket");
+const clearBasket = document.getElementById("clearBasket");
+const indexButton = document.getElementById("indexButton");
 
-let myBasket = localStorage.getItem("myBasket"); //. JSON
-let actualBasket = JSON.parse(myBasket); // version JS de myBasket
-console.log(actualBasket);
+let countPrice;
+let actualPrice = 0;
 
-for (p = 0; p < actualBasket.length; p++) {
-  result_Basket.insertAdjacentHTML(
-    "beforeend",
-    `
-        <tr class="basketTable__row">
-            <td class="basketTable__col basketTable__col--first">
-                    ${actualBasket[p].name}
-            </td>
-            <td class="basketTable__col basketTable__col--second">${
-              actualBasket[p].nbre
-            }</td>
-            <td class="basketTable__col basketTable__col--third">
-            
-            ${convertEuro(actualBasket[p].price) * actualBasket[p].nbre}€
-            </td>
-        </tr>
-    `
-  );
+//* Si le panier n'existe pas :  ---------------------------------------/
+if (!myBasket) {
+  noBasket.innerHTML = `<div class="noBasket">
+    <p class="noBasket__text">Votre panier est actuellement vide</p>
+  </div>
+  `;
+  indexButton.innerHTML = `<button class="btn btn--callToAction" id="goToIndex">Parcourir nos articles</button>
+  `;
+  //* Retour à l'index au click : ------------------------------/
+  const goToIndex = document.getElementById("goToIndex");
+  goToIndex.addEventListener("click", () => {
+    window.location.href = "/index.html";
+  });
+  //* Suppression de l'adresse de livraison : ------------------------------/
+  const deliveryAdress = document.getElementById("deliveryAdress");
+  deliveryAdress.innerHTML = "<div></div>";
+
+  //* Si le panier existe :  ---------------------------------------/
+} else {
+  for (p = 0; p < actualBasket.length; p++) {
+    result_Basket.insertAdjacentHTML(
+      "beforeend",
+      `
+          <tr class="basketTable__row">
+              <td class="basketTable__col basketTable__col--first">
+                      ${actualBasket[p].name}
+              </td>
+              <td class="basketTable__col basketTable__col--second">${
+                actualBasket[p].nbre
+              }</td>
+              <td class="basketTable__col basketTable__col--third">
+              
+              ${convertEuro(actualBasket[p].price) * actualBasket[p].nbre}€
+              </td>
+          </tr>
+      `
+    );
+
+    countPrice =
+      parseInt(actualPrice) +
+      parseInt(actualBasket[p].nbre * actualBasket[p].price);
+    actualPrice = countPrice;
+
+    nbreTotal.innerText = actualNbre;
+    priceTotal.innerText = convertEuro(actualPrice) + "€";
+  }
 }
 
-{
-  /* <tr class="basketTable__row basketTable__row--description">
-    <th class="basketTable__col basketTable__col--first">
-        Total du panier
-    </th>
-    <th class="basketTable__col basketTable__col--second">3</th>
-    <th class="basketTable__col basketTable__col--third">
-        299,50€
-    </th>
-    </tr> */
-}
+//* Suppression du panier au click : ------------------------------/
+
+clearBasket.addEventListener("click", () => {
+  localStorage.removeItem("myBasket");
+  window.location.href = "/html/panier.html";
+});
