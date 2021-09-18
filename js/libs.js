@@ -11,13 +11,13 @@ let countNbre;
 let actualNbre = 0;
 
 const myCounter = document.getElementById("myCounter");
-console.log(myCounter);
+//console.log(myCounter);
 
 //* Récupération dans le localStorage de la clé "myBasket"
 
 let myBasket = localStorage.getItem("myBasket"); //. JSON
 let actualBasket = JSON.parse(myBasket); // version JS de myBasket
-
+console.log(myBasket);
 //* Actualisation du compteur du panier --------------------------/
 const refreshCounter = () => {
   //* Si le panier n'existe pas :  **************/

@@ -75,43 +75,62 @@
     </header>
 
     <main>
-        <section class="titlePage">
-            <div class="titlePage__block">
-            <h1 class="titlePage__title">OrinoCam</h1>
-            <p class="titlePage__subTitle">Validation de la commande</p>
-            </div>
-        </section>
+      <section class="titlePage">
+        <div class="titlePage__block">
+          <h1 class="titlePage__title">OrinoCam</h1>
+          <p class="titlePage__subTitle">Validation de la commande</p>
+        </div>
+      </section>
 
-        <section class="blockInfo">
-            <div class="blockInfo__allContainers blockInfo__allContainers--command">
-                <div class="topContainer topContainer--command">
-                    <div class="topContainer__block topContainer__block--command">
-                        <h2 class="topContainer__block__name topContainer__block__name--command">Merci pour votre commande !</h2>            
-                        <img src="../src/heart_hands_order.jpg" alt="" class="topContainer__picture topContainer__picture--command"/>
-                        <p class="topContainer__block__description--command">
-                            Votre commande a bien été enregistrée et vous sera envoyée dans les meilleurs délais :
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bottomContainer bottomContainer--command">
-                    <div class="bottomContainer__block bottomContainer__block--command">
-                        <h2 class="bottomContainer__block__name">Vos informations</h2>
-                    </div>
-                    <div class="action action--command">
-                        <div class="action__block action__block--command">
-                            <p class="action__block__title">Votre numéro de commande :</p>
-                            <p class="action__block__command">17183 - RTP - 3490</p>
-                        </div>
-                        <div class="action__block  action__block--command">
-                            <p class="action__block__title">Total de votre commande :</p>
-                            <p class="action__block__price">299,50 €</p>
-                        </div>
-                        <button class="btn btn--callToAction" onclick="window.location.href = '../index.html';">Retour à la page d'accueil</button>
-                    </div>
-                </div> 
+      <section class="blockInfo">
+        <div class="blockInfo__allContainers blockInfo__allContainers--command">
+          <div class="topContainer topContainer--command">
+            <div class="topContainer__block topContainer__block--command">
+              <h2
+                class="
+                  topContainer__block__name topContainer__block__name--command
+                "
+              >
+                Merci pour votre commande !
+              </h2>
+              <img
+                src="../src/heart_hands_order.jpg"
+                alt=""
+                class="topContainer__picture topContainer__picture--command"
+              />
+              <p class="topContainer__block__description--command">
+                Votre commande a bien été enregistrée et vous sera envoyée dans
+                les meilleurs délais :
+              </p>
             </div>
-        </section>
+          </div>
+
+          <div class="bottomContainer bottomContainer--command">
+            <div class="bottomContainer__block bottomContainer__block--command">
+              <h2 class="bottomContainer__block__name">Vos informations</h2>
+            </div>
+            <div class="action action--command">
+              <div class="action__block action__block--command">
+                <p class="action__block__title">Votre numéro de commande :</p>
+                <p class="action__block__command" id="commandNumber"></p>
+              </div>
+              <div class="action__block action__block--command">
+                <p class="action__block__title">
+                  Un accusé de réception vient de vous être envoyé à l'adresse
+                  suivante :
+                </p>
+                <p class="action__block__price" id="commandEmail"></p>
+              </div>
+              <button
+                class="btn btn--callToAction"
+                onclick="window.location.href = '../index.html';"
+              >
+                Retour à la page d'accueil
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
@@ -132,5 +151,7 @@
         <p class="copyright__text">© Orinococo / OrniCam, 2021</p>
       </div>
     </footer>
+
+    <script src="/js/commande.js"></script>
   </body>
 </html>

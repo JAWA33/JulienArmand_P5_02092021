@@ -136,7 +136,7 @@
             </div>
           </div>
 
-          <div class="bottomContainer" id="deliveryAdress">
+          <div class="bottomContainer" id="deleteAdress">
             <div class="bottomContainer__block">
               <h2 class="bottomContainer__block__name">
                 Votre adresse de livraison
@@ -145,61 +145,93 @@
                 Merci de communiquer vos coordonnées pour que nous puissions
                 vous envoyer votre commande dans les meilleurs délais :
               </p>
-              <form action="post" class="information__form">
+
+              <form
+                action=""
+                method="POST"
+                class="information__form"
+                id="deliveryAdress"
+              >
                 <div class="information__form__select">
-                  <label for="lastName">Nom :</label>
-                  <input type="text" name="nom" id="lastName" />
+                  <label for="formLastName">Nom :</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="formLastName"
+                    required
+                  />
+                  <small></small>
                 </div>
                 <div class="information__form__select">
                   <label for="firstName">Prénom :</label>
-                  <input type="text" name="prenom" id="firstName" />
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="formFirstName"
+                    required
+                  />
+                  <small></small>
                 </div>
                 <div class="information__form__select">
                   <label for="phoneNumber">Numéro de téléphone :</label>
-                  <input type="text" name="numero" id="phoneNumber" />
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phoneNumber"
+                    maxlength="10"
+                  />
+                  <small></small>
                 </div>
                 <div class="information__form__select">
-                  <label for="email">Adresse mail valide :</label>
-                  <input type="text" name="email" id="email" />
+                  <label for="formEmail">Adresse mail valide :</label>
+                  <input type="text" name="email" id="formEmail" required />
+                  <small></small>
                 </div>
                 <div
                   class="
                     information__form__select information__form__select--full
                   "
                 >
-                  <label for="adress">Adresse postale :</label>
-                  <input type="text" name="adresse" id="adress" />
+                  <label for="formAdress">Adresse postale :</label>
+                  <input type="text" name="adress" id="formAdress" required />
+                  <small></small>
                 </div>
                 <div class="information__form__select">
-                  <label for="zipCode">Code postal :</label>
-                  <input type="text" name="code" id="zipCode" />
+                  <label for="formZipCode">Code postal :</label>
+                  <input
+                    type="number"
+                    name="code"
+                    id="formZipCode"
+                    required
+                    minlength="5"
+                    maxlength="5"
+                  />
+                  <small></small>
                 </div>
                 <div class="information__form__select">
-                  <label for="city">Ville :</label>
-                  <input type="text" name="ville" id="city" />
+                  <label for="formCity">Ville :</label>
+                  <input type="text" name="city" id="formCity" required />
+                  <small></small>
+                </div>
+                <div id="alertMsg"></div>
+                <div class="action action--basket">
+                  <button
+                    class="btn btn--callToAction"
+                    type="submit"
+                    id="orderBasket"
+                    action="http://localhost:3000/api/cameras/order"
+                  >
+                    Passer la commande
+                  </button>
+
+                  <button
+                    class="btn btn--secondaryAction"
+                    onclick="window.location.href = '../index.html';"
+                  >
+                    Continuer mes achats
+                  </button>
                 </div>
               </form>
-            </div>
-            <div class="action action--basket">
-              <div class="action__required">
-                Merci de remplir tous les champs avant de passer la commande
-              </div>
-              <div class="action__block">
-                <p class="action__block__title">Montant total du panier:</p>
-                <p class="action__block__price">299,50€</p>
-              </div>
-              <button
-                class="btn btn--callToAction"
-                onclick="window.location.href = '../html/commande.html';"
-              >
-                Passer la commande
-              </button>
-              <button
-                class="btn btn--secondaryAction"
-                onclick="window.location.href = '../index.html';"
-              >
-                Continuer mes achats
-              </button>
             </div>
           </div>
         </div>
@@ -226,6 +258,7 @@
     </footer>
 
     <script src="/js/libs.js"></script>
+    <!--script src="/js/testAsupprimer.js"></script-->
     <script src="/js/panier.js"></script>
   </body>
 </html>

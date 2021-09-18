@@ -52,6 +52,24 @@ main {
   display: none;
 }
 
+.smallText {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+}
+.smallText__sucess {
+  color: green;
+  background-color: rgba(241, 255, 241, 0.95);
+  border: green solid 3px;
+}
+.smallText__error {
+  color: red;
+  background-color: rgba(255, 236, 236, 0.95);
+  border: red solid 3px;
+}
+
 h1, h2, h3, .logoMenu, .cardProduct__price, .action__block__price {
   font-family: "Montez", cursive, arial;
   font-weight: normal;
@@ -867,7 +885,9 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .bottomContainer__block {
-    width: 60%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -880,6 +900,8 @@ body {
   display: block;
   position: relative;
   margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 .bottomContainer__block__name::after {
   content: "";
@@ -967,6 +989,9 @@ body {
     width: 35%;
   }
 }
+.action--basket {
+  margin-top: 4rem;
+}
 @media screen and (min-width: 1200px) {
   .action--basket {
     width: 50%;
@@ -993,14 +1018,14 @@ body {
   margin-bottom: 1rem;
 }
 .action__required {
-  width: auto;
+  width: 100%;
   height: auto;
   border: 1px red solid;
   border-radius: 1rem;
   background: white;
   color: red;
   padding: 1rem 2rem;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .basketTable {
