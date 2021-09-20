@@ -26,8 +26,10 @@ const descriptionProduct = document.getElementById("descriptionProduct");
 const priceProduct = document.getElementById("priceProduct");
 const imageProduct = document.getElementById("imageProduct");
 const optionProduct = document.getElementById("optionProduct");
+const tittleProduct = document.getElementById("titleProduct");
 
 const showProduct = () => {
+  titleProduct.innerText = "OrinoCam - " + selectedProduct.name;
   nameProduct.innerText = selectedProduct.name;
   descriptionProduct.innerText = selectedProduct.description;
   priceProduct.innerText = convertEuro(selectedProduct.price) + "€";
@@ -84,6 +86,7 @@ button_addToBasket.addEventListener("click", (event) => {
   };
 
   //* Vérification dans le localStorage de la présence d'un panier
+  //* (fait dans le libs.js) :
 
   //let myBasket = localStorage.getItem("myBasket"); //. JSON
   //let actualBasket = JSON.parse(myBasket); // version JS de myBasket

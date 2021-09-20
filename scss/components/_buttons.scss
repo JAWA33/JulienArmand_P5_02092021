@@ -13,6 +13,7 @@
       border: 1px $colorBg_light solid;
       background: $colorPrimary;
       color: $textColor_light;
+      cursor: pointer;
     }
   }
 
@@ -27,6 +28,10 @@
     border-radius: 2rem;
     padding: 1rem;
     transition: all 0.4s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.04);
+    }
   }
 
   &--secondaryAction {

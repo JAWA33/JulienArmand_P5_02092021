@@ -131,7 +131,7 @@ const validEmail = (inputEmail) => {
 };
 
 const validName = (inputName) => {
-  let regexName = new RegExp("^[A-Za-z--]{3,20}$", "g");
+  let regexName = new RegExp("^[A-Za-z]{3,20}$", "g");
 
   let testName = regexName.test(inputName.value);
   let smallText = inputName.nextElementSibling;
@@ -153,7 +153,7 @@ const validName = (inputName) => {
 };
 
 const validPhone = (inputPhone) => {
-  let regexPhone = new RegExp("^[0-9]{10}$", "g");
+  let regexPhone = new RegExp(/[0-9]{10}/, "g");
   let testPhone = regexPhone.test(inputPhone.value);
   let smallText = inputPhone.nextElementSibling;
   console.log(testPhone);
@@ -174,7 +174,7 @@ const validPhone = (inputPhone) => {
 };
 
 const validAdress = (inputAdress) => {
-  let regexAdress = new RegExp("^[A-Za-z0-9.;,]{10,40}$", "g");
+  let regexAdress = new RegExp(/[A-Za-z0-9\s]{10,40}/, "g");
   let testAdress = regexAdress.test(inputAdress.value);
   let smallText = inputAdress.nextElementSibling;
   console.log(testAdress);
@@ -249,11 +249,7 @@ adressForm.addEventListener("submit", (e) => {
     let addIdProduct = [];
 
     for (r = 0; r < actualBasket.length; r++) {
-      (addIdProduct = actualBasket[r].id),
-        // {
-        //   _id:
-        // };
-        productId.push(addIdProduct);
+      (addIdProduct = actualBasket[r].id), productId.push(addIdProduct);
     }
 
     //* on combine les deux précédents tableaux dans orderProducts
@@ -261,6 +257,8 @@ adressForm.addEventListener("submit", (e) => {
       contact: contact,
       products: productId,
     };
+
+    console.log(order);
 
     //! ----- ENVOI DU FORMULAIRE A TRAITER ------------------/
 
@@ -278,7 +276,7 @@ adressForm.addEventListener("submit", (e) => {
           // Si réponse disponible :
           console.log("ok");
           // on enregistre order en .json dans le localStorage
-          localStorage.setItem("orderSend", JSON.stringify(order));
+          //localStorage.setItem("orderSend", JSON.stringify(order));
           console.log(res);
           return res.json();
         } else {
@@ -289,9 +287,9 @@ adressForm.addEventListener("submit", (e) => {
       .then((data) => {
         console.log(data);
         localStorage.setItem("orderReceived", JSON.stringify(data));
-        localStorage.removeItem("orderSend");
+        //localStorage.removeItem("orderSend");
         localStorage.removeItem("myBasket");
-        window.location.href = "/html/commande.html";
+        //window.location.href = "/html/commande.html";
       });
 
     //! ----- ENVOI DU FORMULAIRE A TRAITER ------------------/
@@ -299,8 +297,9 @@ adressForm.addEventListener("submit", (e) => {
     //* Sinon on préviens de l'erreur : ********************************************/
     // Est-ce que le message existe ?
     const messageDetected = document.getElementById("message");
-    //Si oui on ne fait rien :
+
     if (messageDetected) {
+      //Si oui on ne fait rien :
     } else {
       //sinon on insère le texte d'alerte dans alertMsg :
       alertMsg.insertAdjacentHTML(

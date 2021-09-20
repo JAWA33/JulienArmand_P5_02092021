@@ -70,42 +70,80 @@ main {
   border: red solid 3px;
 }
 
-h1, h2, h3, .logoMenu, .cardProduct__price, .action__block__price {
+h1,
+h2,
+h3,
+.logoMenu,
+.cardProduct__price,
+.action__block__price {
   font-family: "Montez", cursive, arial;
   font-weight: normal;
 }
 
-h2 {
+h2,
+.action__block__price {
   font-size: 3rem;
 }
 
-h3, .cardProduct__price {
+h3,
+.cardProduct__price {
   font-size: 2rem;
 }
 
-.logoMenu, .action__block__command {
+.logoMenu,
+.action__block__command {
   font-size: 2.2rem;
 }
 
-.action__block__price, .productOption__title, .productPage__product__name {
+.action__block__command {
+  font-weight: 700;
+  line-height: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: #6262D9 0px 0px 10px;
+}
+
+.productOption__title,
+.productPage__product__name {
   font-size: 2.5rem;
 }
 
-p, li, label, .btn, select, table, input {
+p,
+li,
+label,
+.btn,
+select,
+table,
+input,
+.action__block__email {
   font-family: "Roboto", sans-serif;
 }
 
-li, th {
+li,
+th {
   font-weight: 400;
   font-size: 1.1rem;
 }
 
-p, label, select, td, input {
+p,
+label,
+select,
+td,
+input {
   font-weight: 300;
   font-size: 1rem;
 }
 
-p, label, select {
+.action__block__email {
+  font-size: 1.4rem;
+  text-align: center;
+  color: white;
+  text-shadow: #A68A7C 0px 0px 10px;
+}
+
+p,
+label,
+select {
   line-height: 1.2rem;
 }
 
@@ -142,6 +180,7 @@ td {
   border: 1px white solid;
   background: #6262D9;
   color: white;
+  cursor: pointer;
 }
 .btn--validAction {
   max-width: 350px;
@@ -153,6 +192,10 @@ td {
   border-radius: 2rem;
   padding: 1rem;
   transition: all 0.4s;
+}
+.btn--validAction:hover {
+  cursor: pointer;
+  transform: scale(1.04);
 }
 .btn--secondaryAction {
   background: transparent;
@@ -193,7 +236,7 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.4rem;
   margin: 1rem 0rem;
   background: linear-gradient(20deg, rgba(11, 11, 13, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
   box-shadow: 10px 15px 20px black;
@@ -204,7 +247,7 @@ td {
   .cardProduct {
     width: 300px;
     margin: 1rem;
-    padding: 1rem;
+    padding: 0.6rem;
   }
 }
 .cardProduct:hover {
@@ -224,7 +267,7 @@ td {
   height: 45%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0;
+  border-radius: 1.2rem 1.2rem 0rem 0rem;
   border: 1px solid white;
 }
 .cardProduct__info {
