@@ -12,8 +12,7 @@ const alertMsg = document.getElementById("alertMsg");
 let countPrice;
 let actualPrice = 0;
 
-//* Si le panier n'existe pas :  ---------------------------------------/
-if (!myBasket) {
+const dontShowBasket = () => {
   noBasket.innerHTML = `<div class="noBasket">
     <p class="noBasket__text">Votre panier est actuellement vide</p>
   </div>
@@ -28,26 +27,26 @@ if (!myBasket) {
   //* Suppression de l'adresse de livraison : ------------------------------/
   const deleteAdress = document.getElementById("deleteAdress");
   deleteAdress.innerHTML = "<div></div>";
+};
 
-  //* Si le panier existe :  ---------------------------------------/
-} else {
+const showBasket = () => {
   for (p = 0; p < actualBasket.length; p++) {
     result_Basket.insertAdjacentHTML(
       "beforeend",
       `
-          <tr class="basketTable__row">
-              <td class="basketTable__col basketTable__col--first">
-                      ${actualBasket[p].name}
-              </td>
-              <td class="basketTable__col basketTable__col--second">${
-                actualBasket[p].nbre
-              }</td>
-              <td class="basketTable__col basketTable__col--third">
-              
-              ${convertEuro(actualBasket[p].price) * actualBasket[p].nbre}€
-              </td>
-          </tr>
-      `
+              <tr class="basketTable__row">
+                  <td class="basketTable__col basketTable__col--first">
+                          ${actualBasket[p].name}
+                  </td>
+                  <td class="basketTable__col basketTable__col--second">${
+                    actualBasket[p].nbre
+                  }</td>
+                  <td class="basketTable__col basketTable__col--third">
+                  
+                  ${convertEuro(actualBasket[p].price) * actualBasket[p].nbre}€
+                  </td>
+              </tr>
+          `
     );
 
     countPrice =
@@ -58,6 +57,14 @@ if (!myBasket) {
     nbreTotal.innerText = actualNbre;
     priceTotal.innerText = convertEuro(actualPrice) + "€";
   }
+};
+
+//* Si le panier n'existe pas :  ---------------------------------------/
+if (!myBasket) {
+  dontShowBasket();
+  //* Si le panier existe :  ---------------------------------------/
+} else {
+  showBasket();
 }
 
 //* Suppression du panier au click : ------------------------------/
@@ -213,8 +220,80 @@ const validCode = (inputCode) => {
   }
 };
 
-//! -------------------------Fin REGEX ------------------------------------------/
+//! ---------------------Function commande-------------------------------------/
+let order;
+const createOrder = () => {
+  //* Création tableau les valeurs du formulaire à envoyer
+  let contact = [];
+  contact = {
+    firstName: adressForm.firstName.value,
+    lastName: adressForm.lastName.value,
+    address: adressForm.city.value,
+    city: adressForm.city.value,
+    email: adressForm.email.value,
+  };
 
+  //* Création tableau les valeurs des produits à envoyer
+  let productId = [];
+  let addIdProduct = [];
+
+  for (r = 0; r < actualBasket.length; r++) {
+    (addIdProduct = actualBasket[r].id), productId.push(addIdProduct);
+  }
+
+  //* on combine les deux précédents tableaux dans orderProducts
+  order = {
+    contact: contact,
+    products: productId,
+  };
+};
+
+const postOrder = () =>
+  fetch(postServer, {
+    method: "POST",
+    body: JSON.stringify(order),
+
+    headers: {
+      "Content-type": "application/JSON",
+    },
+  })
+    // Après envoi on traite la réponse :
+    .then(function (res) {
+      if (res.ok) {
+        // Si réponse disponible :
+        return res.json();
+      } else {
+        // sinon
+        console.log(res);
+        console.log("Mauvaise réponse du serveur.");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      localStorage.setItem("orderReceived", JSON.stringify(data));
+      localStorage.removeItem("myBasket");
+      window.location.href = "/html/commande.html";
+    });
+
+const alertUser = () => {
+  //* Sinon on préviens de l'erreur : ********************************************/
+  // Est-ce que le message existe ?
+  const messageDetected = document.getElementById("message");
+
+  if (messageDetected) {
+    //Si oui on ne fait rien :
+  } else {
+    //sinon on insère le texte d'alerte dans alertMsg :
+    alertMsg.insertAdjacentHTML(
+      "afterbegin",
+      `
+      <div class="action__required" id="message">
+        Merci de bien renseigner tous les champs comme demandé avant de passer la commande
+      </div>
+    `
+    );
+  }
+};
 //! ------------------ COMMANDE ------------------------------------------------/
 
 //* Passage de la commande à la soumission du formulaire------------------------/
@@ -232,85 +311,10 @@ adressForm.addEventListener("submit", (e) => {
     validCode(adressForm.code) &&
     validPhone(adressForm.phone)
   ) {
-    //console.log("inputs vérifiés");
-
-    //* Création tableau les valeurs du formulaire à envoyer
-    let contact = [];
-    contact = {
-      firstName: adressForm.firstName.value,
-      lastName: adressForm.lastName.value,
-      address: adressForm.city.value,
-      city: adressForm.city.value,
-      email: adressForm.email.value,
-    };
-
-    //* Création tableau les valeurs des produits à envoyer
-    let productId = [];
-    let addIdProduct = [];
-
-    for (r = 0; r < actualBasket.length; r++) {
-      (addIdProduct = actualBasket[r].id), productId.push(addIdProduct);
-    }
-
-    //* on combine les deux précédents tableaux dans orderProducts
-    let order = {
-      contact: contact,
-      products: productId,
-    };
-
-    console.log(order);
-
-    //! ----- ENVOI DU FORMULAIRE A TRAITER ------------------/
-
-    const postFetch = fetch(postServer, {
-      method: "POST",
-      body: JSON.stringify(order),
-
-      headers: {
-        "Content-type": "application/JSON",
-      },
-    })
-      // Après envoi on traite la réponse :
-      .then(function (res) {
-        if (res.ok) {
-          // Si réponse disponible :
-          console.log("ok");
-          // on enregistre order en .json dans le localStorage
-          //localStorage.setItem("orderSend", JSON.stringify(order));
-          console.log(res);
-          return res.json();
-        } else {
-          console.log(res);
-          console.log("Mauvaise réponse du serveur.");
-        }
-      })
-      .then((data) => {
-        console.log(data);
-        localStorage.setItem("orderReceived", JSON.stringify(data));
-        //localStorage.removeItem("orderSend");
-        localStorage.removeItem("myBasket");
-        //window.location.href = "/html/commande.html";
-      });
-
-    //! ----- ENVOI DU FORMULAIRE A TRAITER ------------------/
+    createOrder();
+    postOrder();
   } else {
-    //* Sinon on préviens de l'erreur : ********************************************/
-    // Est-ce que le message existe ?
-    const messageDetected = document.getElementById("message");
-
-    if (messageDetected) {
-      //Si oui on ne fait rien :
-    } else {
-      //sinon on insère le texte d'alerte dans alertMsg :
-      alertMsg.insertAdjacentHTML(
-        "afterbegin",
-        `
-      <div class="action__required" id="message">
-        Merci de bien renseigner tous les champs comme demandé avant de passer la commande
-      </div>
-    `
-      );
-    }
+    alertUser();
   }
 });
 
