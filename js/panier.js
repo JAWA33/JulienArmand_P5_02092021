@@ -80,33 +80,37 @@ clearBasket.addEventListener("click", (event) => {
 let adressForm = document.getElementById("deliveryAdress");
 
 //* Action au remplissage des inputs "change" : selection dans le formulaire par name="xxxx" dans le HTML *****************/
-adressForm.email.addEventListener("change", function () {
-  validEmail(this);
-});
+if (adressForm) {
+  adressForm.email.addEventListener("change", function () {
+    validEmail(this);
+  });
 
-adressForm.lastName.addEventListener("change", function () {
-  validName(this);
-});
+  adressForm.lastName.addEventListener("change", function () {
+    validName(this);
+  });
 
-adressForm.firstName.addEventListener("change", function () {
-  validName(this);
-});
+  adressForm.firstName.addEventListener("change", function () {
+    validName(this);
+  });
 
-adressForm.city.addEventListener("change", function () {
-  validName(this);
-});
+  adressForm.city.addEventListener("change", function () {
+    validName(this);
+  });
 
-adressForm.adress.addEventListener("change", function () {
-  validAdress(this);
-});
+  adressForm.adress.addEventListener("change", function () {
+    validAdress(this);
+  });
 
-adressForm.phone.addEventListener("change", function () {
-  validPhone(this);
-});
+  adressForm.phone.addEventListener("change", function () {
+    validPhone(this);
+  });
 
-adressForm.code.addEventListener("change", function () {
-  validCode(this);
-});
+  adressForm.code.addEventListener("change", function () {
+    validCode(this);
+  });
+} else {
+  //rien à vérifier
+}
 
 //console.log(adressForm.nom.value);
 
@@ -298,25 +302,29 @@ const alertUser = () => {
 
 //* Passage de la commande à la soumission du formulaire------------------------/
 
-adressForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+if (adressForm) {
+  adressForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  //* Si les regex sont tous validés : *****************************************/
-  if (
-    validEmail(adressForm.email) &&
-    validName(adressForm.firstName) &&
-    validName(adressForm.lastName) &&
-    validName(adressForm.city) &&
-    validAdress(adressForm.adress) &&
-    validCode(adressForm.code) &&
-    validPhone(adressForm.phone)
-  ) {
-    createOrder();
-    postOrder();
-  } else {
-    alertUser();
-  }
-});
+    //* Si les regex sont tous validés : *****************************************/
+    if (
+      validEmail(adressForm.email) &&
+      validName(adressForm.firstName) &&
+      validName(adressForm.lastName) &&
+      validName(adressForm.city) &&
+      validAdress(adressForm.adress) &&
+      validCode(adressForm.code) &&
+      validPhone(adressForm.phone)
+    ) {
+      createOrder();
+      postOrder();
+    } else {
+      alertUser();
+    }
+  });
+} else {
+  //on ne fait rien
+}
 
 //? Message du Backend :
 /**

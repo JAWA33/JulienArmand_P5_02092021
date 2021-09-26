@@ -45,11 +45,14 @@ showProduct();
 //* Récupération des valeurs qui seront mises dans le panier sous forme de tableau au clic sur le bouton
 const button_addToBasket = document.getElementById("addToBasket");
 const button_changeButton = document.getElementById("changeButton");
+
+//* Récupérer la valeur du nombre de produits voulus :
+const nbProducts = document.getElementById("quantitySelected").value;
 let itemSelected = [];
+// On créer un nouveau panier vide
+let saveItem = [];
 
 const saveNewBasket = () => {
-  // On créer un nouveau panier vide
-  let saveItem = [];
   //On y insére l'élément sélectionné
   saveItem.push(itemSelected);
   // On créer un nouveau panier
@@ -73,9 +76,6 @@ const addToSameProduct = () => {
 };
 
 const newItemSelection = () => {
-  //* Récupérer la valeur du nombre de produits voulus :
-  const nbProducts = document.getElementById("quantitySelected").value;
-
   //* Création du tableau des éléments sélectionnés à envoyer au panier :
   itemSelected = {
     id: idCamera,
@@ -85,7 +85,6 @@ const newItemSelection = () => {
   };
 };
 
-//! Validation commande et modification du bouton d'ajout ------------------------------------
 const validConfirm = () => {
   button_changeButton.innerHTML = `
       <button class="btn btn--validAction" id="seeBasket">
@@ -98,7 +97,6 @@ const validConfirm = () => {
   goToBasket.addEventListener("click", () => {
     window.location.href = "/html/panier.html";
   });
-  refreshCounter(); //fonction dans lib.js
 };
 
 //* on choisit la valeur de l'ID à tester retourne true or false)
@@ -117,21 +115,25 @@ button_addToBasket.addEventListener("click", (event) => {
   // Vérification dans le localStorage de la présence d'un panier
   // (fait dans le libs.js) :
 
-  //* Si un panier existe :   -------------------------------------------/
-  if (myBasket) {
-    //* Et si l'ID du produit existe déjà dans le panier : **************/
+  //* Si aucun panier n'existe : -------------------------------------------/
+  if (!myBasket) {
+    saveNewBasket();
+    validConfirm();
+    refreshCounter(); //fonction dans lib.js
+
+    //* Si un panier existe :   -------------------------------------------/
+  } else {
     if (actualBasket.find(testID)) {
+      //* Et si l'ID du produit existe déjà dans le panier : **************/
       addToSameProduct();
       validConfirm();
+      refreshCounter(); //fonction dans lib.js
 
       //* Et si l'ID du produit n'existe pas dans le panier : ***********/
     } else {
       addNewProduct();
       validConfirm();
+      refreshCounter(); //fonction dans lib.js
     }
-    //* Si aucun panier n'existe : -------------------------------------------/
-  } else {
-    saveNewBasket();
-    validConfirm();
   }
 });
