@@ -146,12 +146,7 @@
                 vous envoyer votre commande dans les meilleurs délais :
               </p>
 
-              <form
-                action=""
-                method="POST"
-                class="information__form"
-                id="deliveryAdress"
-              >
+              <form method="POST" class="information__form" id="deliveryAdress">
                 <div class="information__form__select">
                   <label for="formLastName">Nom :</label>
                   <input
@@ -163,7 +158,7 @@
                   <small></small>
                 </div>
                 <div class="information__form__select">
-                  <label for="firstName">Prénom :</label>
+                  <label for="formFirstName">Prénom :</label>
                   <input
                     type="text"
                     name="firstName"
@@ -199,14 +194,7 @@
                 </div>
                 <div class="information__form__select">
                   <label for="formZipCode">Code postal :</label>
-                  <input
-                    type="number"
-                    name="code"
-                    id="formZipCode"
-                    required
-                    minlength="5"
-                    maxlength="5"
-                  />
+                  <input type="number" name="code" id="formZipCode" required />
                   <small></small>
                 </div>
                 <div class="information__form__select">
@@ -220,7 +208,6 @@
                     class="btn btn--callToAction"
                     type="submit"
                     id="orderBasket"
-                    action="http://localhost:3000/api/cameras/order"
                   >
                     Passer la commande
                   </button>

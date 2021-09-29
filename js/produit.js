@@ -45,9 +45,7 @@ showProduct();
 //* Récupération des valeurs qui seront mises dans le panier sous forme de tableau au clic sur le bouton
 const button_addToBasket = document.getElementById("addToBasket");
 const button_changeButton = document.getElementById("changeButton");
-
-//* Récupérer la valeur du nombre de produits voulus :
-const nbProducts = document.getElementById("quantitySelected").value;
+const nbProducts = document.getElementById("quantitySelected");
 let itemSelected = [];
 // On créer un nouveau panier vide
 let saveItem = [];
@@ -67,7 +65,8 @@ const addNewProduct = () => {
 
 const addToSameProduct = () => {
   // On calcul le nbre total de ce produit :
-  let nbTotal = parseInt(nbProducts) + parseInt(actualBasket.find(testID).nbre);
+  let nbTotal =
+    parseInt(nbProducts.value) + parseInt(actualBasket.find(testID).nbre);
   // On remplace l'ancien nombre par le nouveau :
   actualBasket.find(testID).nbre = nbTotal;
 
@@ -80,7 +79,7 @@ const newItemSelection = () => {
   itemSelected = {
     id: idCamera,
     name: selectedProduct.name,
-    nbre: nbProducts,
+    nbre: nbProducts.value,
     price: selectedProduct.price,
   };
 };
